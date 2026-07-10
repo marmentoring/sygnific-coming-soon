@@ -43,20 +43,12 @@
       border-bottom: 1px solid rgba(201,162,39,0.18);
     }
 
-    /* Logo on a white pill so it's visible on dark background */
-    .logo-badge {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 10px 22px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .logo-badge img {
       height: 90px;
       width: auto;
       display: block;
+      /* Invert to white monochrome on dark background */
+      filter: brightness(0) invert(1);
     }
 
     .slide-counter {
@@ -262,8 +254,8 @@
     @media (max-width: 680px) {
       header { padding: 14px 20px; }
 
-      .logo-badge { padding: 8px 16px; }
       .logo-badge img { height: 64px; }
+      .slide-counter { display: none; }
 
       .coming-soon { padding: 24px 20px 16px; }
 
@@ -309,7 +301,7 @@
   <!-- Header -->
   <header>
     <div class="logo-badge">
-      <img src="logo/logo-sg.png" alt="Sygnific Pte Ltd">
+      <img src="logo/logo-sg.png" alt="Sygnific">
     </div>
     <div class="slide-counter">
       <em id="cur">01</em> / 03
