@@ -7,7 +7,7 @@
   <title>SYGNIFIC — Launching Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -15,18 +15,16 @@
     :root {
       --gold: #C9A227;
       --navy: #0B1628;
-      --white: #F5F3EE;
       --speed: 1000ms;
     }
 
     html, body {
       width: 100%;
-      height: 100%;
+      min-height: 100%;
       background: var(--navy);
       font-family: 'Montserrat', sans-serif;
     }
 
-    /* ── PAGE SHELL: full-height flex column ────────────── */
     .page {
       min-height: 100dvh;
       display: flex;
@@ -40,57 +38,100 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 48px;
+      padding: 20px 48px;
       background: var(--navy);
-      border-bottom: 1px solid rgba(201,162,39,0.15);
+      border-bottom: 1px solid rgba(201,162,39,0.18);
     }
 
-    .logo-lockup {
-      display: flex;
+    /* Logo on a white pill so it's visible on dark background */
+    .logo-badge {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 10px 22px;
+      display: inline-flex;
       align-items: center;
-      gap: 14px;
+      justify-content: center;
     }
 
-    .logo-lockup img {
-      height: 44px;
+    .logo-badge img {
+      height: 90px;
       width: auto;
-    }
-
-    .logo-divider {
-      width: 1px;
-      height: 30px;
-      background: rgba(201,162,39,0.4);
-    }
-
-    .logo-meta {
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: rgba(245,243,238,0.55);
-      line-height: 1.8;
-    }
-
-    .logo-meta strong {
       display: block;
-      font-weight: 500;
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.45em;
     }
 
     .slide-counter {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 300;
-      color: rgba(245,243,238,0.45);
+      color: rgba(245,243,238,0.4);
       letter-spacing: 0.15em;
     }
 
     .slide-counter em {
       font-style: normal;
       color: var(--gold);
-      font-size: 18px;
+      font-size: 20px;
+    }
+
+    /* ── COMING SOON BANNER ──────────────────────────────── */
+    .coming-soon {
+      flex: 0 0 auto;
+      text-align: center;
+      padding: 36px 24px 28px;
+    }
+
+    .coming-soon-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.55em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .coming-soon h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      color: #F5F3EE;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .coming-soon h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 300;
+    }
+
+    .coming-soon-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .coming-soon-rule::before,
+    .coming-soon-rule::after {
+      content: '';
+      height: 1px;
+      width: 80px;
+      background: linear-gradient(to right, transparent, rgba(201,162,39,0.5));
+    }
+
+    .coming-soon-rule::after {
+      background: linear-gradient(to left, transparent, rgba(201,162,39,0.5));
+    }
+
+    .coming-soon-rule span {
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(201,162,39,0.6);
     }
 
     /* ── CAROUSEL AREA ──────────────────────────────────── */
@@ -100,16 +141,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 0;
-      gap: 0;
+      padding: 20px 0 36px;
     }
 
-    /* The track: sized to image natural ratio ≈ 1521×265 */
+    /* Fixed-ratio track matching the image proportions */
     .carousel-track {
       position: relative;
       width: 100%;
       max-width: 1521px;
-      aspect-ratio: 1521 / 265;
+      /* Use contain so each image shows fully without cropping */
+      background: var(--navy);
+      /* Aspect ratio of the tallest image: 1521×274 */
+      aspect-ratio: 1521 / 274;
     }
 
     .slide {
@@ -128,24 +171,45 @@
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      /* contain keeps all 3 images fully visible without any cropping */
+      object-fit: contain;
       display: block;
     }
 
-    /* ── DOTS ───────────────────────────────────────────── */
+    /* ── PROGRESS + DOTS ─────────────────────────────────── */
+    .carousel-controls {
+      width: 100%;
+      max-width: 1521px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .progress-wrap {
+      width: 100%;
+      height: 2px;
+      background: rgba(245,243,238,0.07);
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--gold);
+    }
+
     .dots {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      margin-top: 28px;
     }
 
     .dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: rgba(245,243,238,0.25);
+      background: rgba(245,243,238,0.22);
       border: none;
       cursor: pointer;
       transition: all 350ms ease;
@@ -159,23 +223,7 @@
     }
 
     .dot:hover:not(.active) {
-      background: rgba(245,243,238,0.55);
-    }
-
-    /* ── PROGRESS BAR ───────────────────────────────────── */
-    .progress-wrap {
-      width: 100%;
-      max-width: 1521px;
-      height: 2px;
-      background: rgba(245,243,238,0.08);
-      margin-top: 14px;
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--gold);
-      transition: width 80ms linear;
+      background: rgba(245,243,238,0.5);
     }
 
     /* ── FOOTER ─────────────────────────────────────────── */
@@ -184,7 +232,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 20px 48px;
+      padding: 18px 48px;
       border-top: 1px solid rgba(201,162,39,0.12);
       background: var(--navy);
     }
@@ -193,11 +241,11 @@
       display: flex;
       align-items: center;
       gap: 9px;
-      color: rgba(245,243,238,0.5);
+      color: rgba(245,243,238,0.45);
       text-decoration: none;
       font-size: 11px;
       font-weight: 300;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       transition: color 250ms ease;
     }
@@ -205,32 +253,25 @@
     .contact-link:hover { color: var(--gold); }
 
     .contact-link svg {
-      width: 15px;
-      height: 15px;
+      width: 14px;
+      height: 14px;
       flex-shrink: 0;
     }
 
-    /* ── MOBILE ─────────────────────────────────────────── */
+    /* ── MOBILE ──────────────────────────────────────────── */
     @media (max-width: 680px) {
-      header {
-        padding: 16px 20px;
-      }
+      header { padding: 14px 20px; }
 
-      .logo-lockup img { height: 34px; }
-      .logo-divider, .logo-meta { display: none; }
+      .logo-badge { padding: 8px 16px; }
+      .logo-badge img { height: 64px; }
 
-      .carousel-area {
-        padding: 24px 0;
-        gap: 0;
-        /* On mobile: stack all 3 images, no carousel */
-        justify-content: flex-start;
-      }
+      .coming-soon { padding: 24px 20px 16px; }
 
-      /* Override carousel to stack vertically */
+      /* Stack all 3 images vertically on mobile */
       .carousel-track {
         position: static;
         aspect-ratio: auto;
-        height: auto;
+        background: transparent;
       }
 
       .slide {
@@ -240,28 +281,23 @@
         display: block;
       }
 
-      .slide + .slide {
-        margin-top: 3px;
-      }
+      .slide + .slide { margin-top: 4px; }
 
-      .slide img {
-        height: auto;
-      }
+      .slide img { object-fit: contain; height: auto; }
 
-      .dots, .progress-wrap { display: none; }
+      .carousel-controls { display: none; }
 
-      footer { padding: 16px 20px; }
+      footer { padding: 14px 20px; }
     }
 
-    /* ── FADE IN ────────────────────────────────────────── */
-    header, footer, .carousel-area {
-      animation: fadeIn 800ms ease both;
-    }
-    footer { animation-delay: 200ms; }
-    .carousel-area { animation-delay: 100ms; }
+    /* ── FADE IN ─────────────────────────────────────────── */
+    header  { animation: fadeDown 700ms ease both; }
+    .coming-soon { animation: fadeDown 700ms 120ms ease both; }
+    .carousel-area { animation: fadeDown 700ms 220ms ease both; }
+    footer  { animation: fadeDown 700ms 320ms ease both; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
     }
   </style>
@@ -272,23 +308,27 @@
 
   <!-- Header -->
   <header>
-    <div class="logo-lockup">
-      <img src="logo/logo-sg.png" alt="Sygnific">
-      <div class="logo-divider"></div>
-      <div class="logo-meta">
-        <strong>SYGNIFIC</strong>
-        Executive Advisory
-      </div>
+    <div class="logo-badge">
+      <img src="logo/logo-sg.png" alt="Sygnific Pte Ltd">
     </div>
     <div class="slide-counter">
       <em id="cur">01</em> / 03
     </div>
   </header>
 
+  <!-- Coming Soon Title -->
+  <section class="coming-soon">
+    <span class="coming-soon-label">sygnific.global</span>
+    <h1>Coming <em>Soon</em></h1>
+    <div class="coming-soon-rule">
+      <span>Executive Advisory</span>
+    </div>
+  </section>
+
   <!-- Carousel -->
   <main class="carousel-area">
 
-    <div class="carousel-track" id="track">
+    <div class="carousel-track">
       <div class="slide active">
         <img src="images/slide1.jpg" alt="Something Significant is Taking Shape" loading="eager">
       </div>
@@ -300,15 +340,16 @@
       </div>
     </div>
 
-    <div class="progress-wrap">
-      <div class="progress-fill" id="progress"></div>
+    <div class="carousel-controls">
+      <div class="progress-wrap">
+        <div class="progress-fill" id="progress"></div>
+      </div>
+      <nav class="dots" aria-label="Slide navigation">
+        <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+        <button class="dot" data-i="1" aria-label="Slide 2"></button>
+        <button class="dot" data-i="2" aria-label="Slide 3"></button>
+      </nav>
     </div>
-
-    <nav class="dots" aria-label="Slide navigation">
-      <button class="dot active" data-i="0" aria-label="Slide 1"></button>
-      <button class="dot" data-i="1" aria-label="Slide 2"></button>
-      <button class="dot" data-i="2" aria-label="Slide 3"></button>
-    </nav>
 
   </main>
 
@@ -333,7 +374,6 @@
   const INTERVAL = 6000;
 
   let current = 0, timer, raf, t0;
-
   const pad = n => String(n + 1).padStart(2, '0');
 
   function goTo(idx) {
@@ -343,10 +383,10 @@
     slides[current].classList.add('active');
     dots[current].classList.add('active');
     curEl.textContent = pad(current);
-    resetProgress();
+    startProgress();
   }
 
-  function resetProgress() {
+  function startProgress() {
     cancelAnimationFrame(raf);
     progress.style.width = '0%';
     t0 = performance.now();
@@ -363,8 +403,7 @@
   }
 
   dots.forEach(d => d.addEventListener('click', () => {
-    goTo(+d.dataset.i);
-    resetTimer();
+    goTo(+d.dataset.i); resetTimer();
   }));
 
   document.addEventListener('keydown', e => {
@@ -379,7 +418,7 @@
     if (Math.abs(dx) > 40) { goTo(current + (dx > 0 ? 1 : -1)); resetTimer(); }
   }, { passive: true });
 
-  resetProgress();
+  startProgress();
   resetTimer();
 </script>
 
