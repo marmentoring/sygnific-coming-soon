@@ -4,49 +4,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sygnific — Executive advisory for those building what comes next. Launching soon.">
-  <meta property="og:title" content="Sygnific — Something Significant is Taking Shape">
-  <meta property="og:description" content="Executive advisory for those building what comes next.">
-  <meta property="og:image" content="images/slide1.jpg">
   <title>SYGNIFIC — Launching Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --gold: #C9A227;
-      --navy: #0D1B35;
+      --navy: #0B1628;
       --white: #F5F3EE;
-      --transition-speed: 1200ms;
+      --speed: 1000ms;
     }
 
     html, body {
       width: 100%;
       height: 100%;
-      overflow: hidden;
       background: var(--navy);
+      font-family: 'Montserrat', sans-serif;
     }
 
-    /* ─── CAROUSEL WRAPPER ─────────────────────────────── */
-    .carousel {
+    /* ── PAGE SHELL: full-height flex column ────────────── */
+    .page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────── */
+    header {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-lockup img {
+      height: 44px;
+      width: auto;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(201,162,39,0.4);
+    }
+
+    .logo-meta {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(245,243,238,0.55);
+      line-height: 1.8;
+    }
+
+    .logo-meta strong {
+      display: block;
+      font-weight: 500;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.45em;
+    }
+
+    .slide-counter {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(245,243,238,0.45);
+      letter-spacing: 0.15em;
+    }
+
+    .slide-counter em {
+      font-style: normal;
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    /* ── CAROUSEL AREA ──────────────────────────────────── */
+    .carousel-area {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+      gap: 0;
+    }
+
+    /* The track: sized to image natural ratio ≈ 1521×265 */
+    .carousel-track {
       position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
+      width: 100%;
+      max-width: 1521px;
+      aspect-ratio: 1521 / 265;
     }
 
-    /* ─── SLIDES ────────────────────────────────────────── */
     .slide {
       position: absolute;
       inset: 0;
       opacity: 0;
-      transition: opacity var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+      transition: opacity var(--speed) ease;
       pointer-events: none;
     }
 
@@ -55,411 +125,263 @@
       pointer-events: auto;
     }
 
-    .slide img.bg {
-      position: absolute;
-      inset: 0;
+    .slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center center;
-      transform: scale(1.06);
-      transition: transform 8000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      will-change: transform;
-    }
-
-    .slide.active img.bg {
-      transform: scale(1);
-    }
-
-    /* Vignette overlay for depth */
-    .slide::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse at 70% 50%, transparent 30%, rgba(0,0,0,0.45) 100%),
-        linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.4) 100%);
-      pointer-events: none;
-    }
-
-    /* ─── TOP LOGO BAR ──────────────────────────────────── */
-    .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 28px 48px;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
-    }
-
-    .logo-lockup {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .logo-lockup img {
-      height: 52px;
-      width: auto;
-      filter: brightness(0) invert(1);
-      opacity: 0.92;
-    }
-
-    .logo-divider {
-      width: 1px;
-      height: 36px;
-      background: rgba(201, 162, 39, 0.5);
-    }
-
-    .logo-text {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(245, 243, 238, 0.7);
-      line-height: 1.6;
-    }
-
-    .logo-text strong {
       display: block;
-      font-weight: 500;
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 0.4em;
     }
 
-    /* ─── BOTTOM BAR ────────────────────────────────────── */
-    .bottom-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      padding: 0 48px 36px;
-      background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 100%);
-    }
-
-    /* Email link */
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: rgba(245, 243, 238, 0.75);
-      font-family: 'Montserrat', sans-serif;
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 0.15em;
-      transition: color 300ms ease;
-    }
-
-    .contact-link:hover {
-      color: var(--gold);
-    }
-
-    .contact-link svg {
-      width: 16px;
-      height: 16px;
-      opacity: 0.7;
-      flex-shrink: 0;
-    }
-
-    /* Navigation dots */
+    /* ── DOTS ───────────────────────────────────────────── */
     .dots {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
+      margin-top: 28px;
     }
 
     .dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
-      background: rgba(245, 243, 238, 0.35);
-      cursor: pointer;
-      transition: all 400ms ease;
+      background: rgba(245,243,238,0.25);
       border: none;
+      cursor: pointer;
+      transition: all 350ms ease;
       padding: 0;
     }
 
     .dot.active {
-      width: 28px;
-      border-radius: 3px;
+      width: 30px;
+      border-radius: 4px;
       background: var(--gold);
     }
 
     .dot:hover:not(.active) {
-      background: rgba(245, 243, 238, 0.65);
+      background: rgba(245,243,238,0.55);
     }
 
-    /* Progress bar */
-    .progress-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
+    /* ── PROGRESS BAR ───────────────────────────────────── */
+    .progress-wrap {
+      width: 100%;
+      max-width: 1521px;
       height: 2px;
-      background: var(--gold);
-      z-index: 200;
+      background: rgba(245,243,238,0.08);
+      margin-top: 14px;
+    }
+
+    .progress-fill {
+      height: 100%;
       width: 0%;
-      transition: width 100ms linear;
+      background: var(--gold);
+      transition: width 80ms linear;
     }
 
-    /* Slide counter */
-    .slide-counter {
-      font-family: 'Cormorant Garamond', serif;
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 48px;
+      border-top: 1px solid rgba(201,162,39,0.12);
+      background: var(--navy);
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(245,243,238,0.5);
+      text-decoration: none;
+      font-size: 11px;
       font-weight: 300;
-      font-size: 13px;
-      color: rgba(245, 243, 238, 0.5);
       letter-spacing: 0.2em;
-    }
-
-    .slide-counter span {
-      color: var(--gold);
-      font-size: 16px;
-    }
-
-    /* ─── INITIAL FADE IN ────────────────────────────────── */
-    .top-bar,
-    .bottom-bar {
-      animation: fadeDown 1200ms 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
-    }
-
-    .bottom-bar {
-      animation-name: fadeUp;
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── MOBILE ────────────────────────────────────────── */
-    @media (max-width: 640px) {
-      .top-bar {
-        padding: 20px 24px;
-      }
-
-      .logo-lockup img {
-        height: 40px;
-      }
-
-      .logo-divider {
-        display: none;
-      }
-
-      .logo-text {
-        display: none;
-      }
-
-      .bottom-bar {
-        padding: 0 24px 28px;
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 16px;
-      }
-
-      .slide img.bg {
-        object-position: 30% center;
-      }
-    }
-
-    /* Touch hint on mobile */
-    .touch-hint {
-      position: fixed;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 100;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: rgba(245, 243, 238, 0.35);
-      display: none;
-      animation: pulse 2s ease-in-out infinite;
+      transition: color 250ms ease;
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 0.35; }
-      50% { opacity: 0.65; }
+    .contact-link:hover { color: var(--gold); }
+
+    .contact-link svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
     }
 
-    @media (max-width: 640px) {
-      .touch-hint { display: block; }
+    /* ── MOBILE ─────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      header {
+        padding: 16px 20px;
+      }
+
+      .logo-lockup img { height: 34px; }
+      .logo-divider, .logo-meta { display: none; }
+
+      .carousel-area {
+        padding: 24px 0;
+        gap: 0;
+        /* On mobile: stack all 3 images, no carousel */
+        justify-content: flex-start;
+      }
+
+      /* Override carousel to stack vertically */
+      .carousel-track {
+        position: static;
+        aspect-ratio: auto;
+        height: auto;
+      }
+
+      .slide {
+        position: static;
+        opacity: 1 !important;
+        pointer-events: auto;
+        display: block;
+      }
+
+      .slide + .slide {
+        margin-top: 3px;
+      }
+
+      .slide img {
+        height: auto;
+      }
+
+      .dots, .progress-wrap { display: none; }
+
+      footer { padding: 16px 20px; }
+    }
+
+    /* ── FADE IN ────────────────────────────────────────── */
+    header, footer, .carousel-area {
+      animation: fadeIn 800ms ease both;
+    }
+    footer { animation-delay: 200ms; }
+    .carousel-area { animation-delay: 100ms; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- Progress bar -->
-  <div class="progress-bar" id="progressBar"></div>
+<div class="page">
 
-  <!-- Top logo bar -->
-  <header class="top-bar">
+  <!-- Header -->
+  <header>
     <div class="logo-lockup">
-      <img src="logo/logo-sg.png" alt="Sygnific" id="headerLogo">
+      <img src="logo/logo-sg.png" alt="Sygnific">
       <div class="logo-divider"></div>
-      <div class="logo-text">
+      <div class="logo-meta">
         <strong>SYGNIFIC</strong>
         Executive Advisory
       </div>
     </div>
     <div class="slide-counter">
-      <span id="currentSlide">01</span> / 03
+      <em id="cur">01</em> / 03
     </div>
   </header>
 
   <!-- Carousel -->
-  <div class="carousel" id="carousel" role="region" aria-label="Sygnific carousel">
+  <main class="carousel-area">
 
-    <div class="slide active" role="group" aria-label="Slide 1 of 3">
-      <img class="bg" src="images/slide1.jpg" alt="Something Significant is Taking Shape — executive advisory, launching soon" loading="eager">
+    <div class="carousel-track" id="track">
+      <div class="slide active">
+        <img src="images/slide1.jpg" alt="Something Significant is Taking Shape" loading="eager">
+      </div>
+      <div class="slide">
+        <img src="images/slide2.jpg" alt="We're Building More Than a Website" loading="eager">
+      </div>
+      <div class="slide">
+        <img src="images/slide3.jpg" alt="Great Things Begin Quietly" loading="eager">
+      </div>
     </div>
 
-    <div class="slide" role="group" aria-label="Slide 2 of 3">
-      <img class="bg" src="images/slide2.jpg" alt="We're Building More Than a Website — executive growth and market expansion" loading="eager">
+    <div class="progress-wrap">
+      <div class="progress-fill" id="progress"></div>
     </div>
 
-    <div class="slide" role="group" aria-label="Slide 3 of 3">
-      <img class="bg" src="images/slide3.jpg" alt="Great Things Begin Quietly — a new executive advisory platform is coming" loading="eager">
-    </div>
+    <nav class="dots" aria-label="Slide navigation">
+      <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+      <button class="dot" data-i="1" aria-label="Slide 2"></button>
+      <button class="dot" data-i="2" aria-label="Slide 3"></button>
+    </nav>
 
-  </div>
+  </main>
 
-  <!-- Bottom bar -->
-  <footer class="bottom-bar">
-    <a href="mailto:info@sygnific.global" class="contact-link" aria-label="Email Sygnific">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+  <!-- Footer -->
+  <footer>
+    <a href="mailto:info@sygnific.global" class="contact-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
         <rect x="2" y="4" width="20" height="16" rx="2"/>
         <path d="M2 7l10 7 10-7"/>
       </svg>
       info@sygnific.global
     </a>
-    <nav class="dots" aria-label="Slide navigation">
-      <button class="dot active" aria-label="Go to slide 1" data-index="0"></button>
-      <button class="dot" aria-label="Go to slide 2" data-index="1"></button>
-      <button class="dot" aria-label="Go to slide 3" data-index="2"></button>
-    </nav>
   </footer>
 
-  <div class="touch-hint" aria-hidden="true">Swipe to explore</div>
+</div>
 
-  <script>
-    const slides    = document.querySelectorAll('.slide');
-    const dots      = document.querySelectorAll('.dot');
-    const progressBar = document.getElementById('progressBar');
-    const currentSlideEl = document.getElementById('currentSlide');
+<script>
+  const slides   = document.querySelectorAll('.slide');
+  const dots     = document.querySelectorAll('.dot');
+  const progress = document.getElementById('progress');
+  const curEl    = document.getElementById('cur');
+  const INTERVAL = 6000;
 
-    let current = 0;
-    let autoplay;
-    let progressStart;
-    const INTERVAL = 6000; // ms between slides
-    let animFrame;
+  let current = 0, timer, raf, t0;
 
-    // Pad number
-    const pad = n => String(n + 1).padStart(2, '0');
+  const pad = n => String(n + 1).padStart(2, '0');
 
-    function goTo(index) {
-      slides[current].classList.remove('active');
-      dots[current].classList.remove('active');
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = ((idx % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    curEl.textContent = pad(current);
+    resetProgress();
+  }
 
-      current = (index + slides.length) % slides.length;
+  function resetProgress() {
+    cancelAnimationFrame(raf);
+    progress.style.width = '0%';
+    t0 = performance.now();
+    (function tick(now) {
+      const pct = Math.min((now - t0) / INTERVAL * 100, 100);
+      progress.style.width = pct + '%';
+      if (pct < 100) raf = requestAnimationFrame(tick);
+    })(t0);
+  }
 
-      slides[current].classList.add('active');
-      dots[current].classList.add('active');
-      currentSlideEl.textContent = pad(current);
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), INTERVAL);
+  }
 
-      // Restart progress bar
-      clearProgress();
-      startProgress();
-    }
+  dots.forEach(d => d.addEventListener('click', () => {
+    goTo(+d.dataset.i);
+    resetTimer();
+  }));
 
-    function next() { goTo(current + 1); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
+    if (e.key === 'ArrowLeft')  { goTo(current - 1); resetTimer(); }
+  });
 
-    // Progress bar animation
-    function startProgress() {
-      progressStart = performance.now();
-      function tick(now) {
-        const elapsed = now - progressStart;
-        const pct = Math.min((elapsed / INTERVAL) * 100, 100);
-        progressBar.style.width = pct + '%';
-        if (pct < 100) animFrame = requestAnimationFrame(tick);
-      }
-      animFrame = requestAnimationFrame(tick);
-    }
+  let tx = 0;
+  document.addEventListener('touchstart', e => tx = e.changedTouches[0].screenX, { passive: true });
+  document.addEventListener('touchend', e => {
+    const dx = tx - e.changedTouches[0].screenX;
+    if (Math.abs(dx) > 40) { goTo(current + (dx > 0 ? 1 : -1)); resetTimer(); }
+  }, { passive: true });
 
-    function clearProgress() {
-      cancelAnimationFrame(animFrame);
-      progressBar.style.width = '0%';
-    }
-
-    function resetAutoplay() {
-      clearInterval(autoplay);
-      autoplay = setInterval(next, INTERVAL);
-    }
-
-    // Dot clicks
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        goTo(parseInt(dot.dataset.index));
-        resetAutoplay();
-      });
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        goTo(current + 1); resetAutoplay();
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        goTo(current - 1); resetAutoplay();
-      }
-    });
-
-    // Touch / swipe
-    let touchStartX = 0;
-    let touchStartY = 0;
-
-    document.addEventListener('touchstart', e => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    document.addEventListener('touchend', e => {
-      const dx = touchStartX - e.changedTouches[0].screenX;
-      const dy = touchStartY - e.changedTouches[0].screenY;
-      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-        dx > 0 ? (goTo(current + 1), resetAutoplay()) : (goTo(current - 1), resetAutoplay());
-      }
-    }, { passive: true });
-
-    // Pause on hover/focus (desktop accessibility)
-    const carousel = document.getElementById('carousel');
-    carousel.addEventListener('mouseenter', () => {
-      clearInterval(autoplay);
-      cancelAnimationFrame(animFrame);
-    });
-    carousel.addEventListener('mouseleave', () => {
-      startProgress();
-      resetAutoplay();
-    });
-
-    // Start
-    startProgress();
-    autoplay = setInterval(next, INTERVAL);
-  </script>
+  resetProgress();
+  resetTimer();
+</script>
 
 </body>
 </html>
