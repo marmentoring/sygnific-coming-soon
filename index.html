@@ -146,61 +146,91 @@
     .services-strip {
       flex: 0 0 auto;
       text-align: center;
-      padding: 8px 24px 28px;
+      padding: 36px 24px 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 0;
+      position: relative;
     }
 
-    .services-strip .service-line {
+    .services-strip::before {
+      content: '';
+      display: block;
+      width: 240px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,162,39,0.45), transparent);
+      margin-bottom: 32px;
+    }
+
+    /* three services in a horizontal row */
+    .services-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+
+    .services-row .service-item {
       font-family: 'Montserrat', sans-serif;
       font-size: 10px;
       font-weight: 400;
-      letter-spacing: 0.38em;
+      letter-spacing: 0.42em;
       text-transform: uppercase;
-      color: rgba(245,243,238,0.55);
+      color: rgba(245,243,238,0.62);
+      padding: 0 28px;
     }
 
-    .services-strip .geo-line {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px;
-      font-weight: 300;
-      letter-spacing: 0.28em;
-      color: var(--gold);
-      margin-top: 4px;
-    }
-
-    .services-strip .divider-rule {
+    .services-row .svc-sep {
       width: 1px;
-      height: 18px;
-      background: rgba(201,162,39,0.3);
-      margin: 4px 0;
+      height: 22px;
+      background: rgba(201,162,39,0.35);
+      flex-shrink: 0;
     }
 
-    .services-strip .founder-block {
-      margin-top: 12px;
+    .geo-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.26em;
+      color: var(--gold);
+      margin-top: 18px;
+      opacity: 0.85;
+    }
+
+    /* thin rule between geo and founder */
+    .founder-rule {
+      width: 40px;
+      height: 1px;
+      background: rgba(201,162,39,0.3);
+      margin: 22px auto 18px;
+    }
+
+    .founder-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      gap: 5px;
     }
 
-    .services-strip .founder-role {
+    .founder-role {
       font-family: 'Montserrat', sans-serif;
-      font-size: 9px;
-      font-weight: 300;
-      letter-spacing: 0.45em;
+      font-size: 8.5px;
+      font-weight: 400;
+      letter-spacing: 0.52em;
       text-transform: uppercase;
-      color: rgba(245,243,238,0.35);
+      color: rgba(245,243,238,0.32);
     }
 
-    .services-strip .founder-name {
+    .founder-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 16px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      color: rgba(245,243,238,0.75);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.22em;
+      color: rgba(245,243,238,0.82);
+      line-height: 1.1;
     }
 
     /* ── CAROUSEL AREA ──────────────────────────────────── */
@@ -358,14 +388,18 @@
       .carousel-controls { display: none; }
 
       footer { padding: 14px 20px; }
+
+      .services-row { flex-direction: column; gap: 12px; }
+      .services-row .svc-sep { width: 30px; height: 1px; }
+      .services-row .service-item { padding: 0; letter-spacing: 0.32em; }
     }
 
     /* ── FADE IN ─────────────────────────────────────────── */
     header  { animation: fadeDown 700ms ease both; }
     .coming-soon { animation: fadeDown 700ms 120ms ease both; }
-    .services-strip { animation: fadeDown 700ms 200ms ease both; }
-    .carousel-area { animation: fadeDown 700ms 300ms ease both; }
-    footer  { animation: fadeDown 700ms 400ms ease both; }
+    .carousel-area { animation: fadeDown 700ms 220ms ease both; }
+    .services-strip { animation: fadeDown 700ms 360ms ease both; }
+    footer  { animation: fadeDown 700ms 480ms ease both; }
 
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(12px); }
@@ -398,21 +432,6 @@
     <span class="launching-label">Launching July 2026</span>
   </section>
 
-  <!-- Services Strip -->
-  <section class="services-strip">
-    <span class="service-line">Executive Representation</span>
-    <div class="divider-rule"></div>
-    <span class="service-line">Strategic Advisory</span>
-    <div class="divider-rule"></div>
-    <span class="service-line">Market Expansion</span>
-    <div class="divider-rule"></div>
-    <span class="geo-line">Singapore &nbsp;•&nbsp; United Arab Emirates</span>
-    <div class="founder-block">
-      <span class="founder-role">Founder &amp; Managing Partner</span>
-      <span class="founder-name">Enrico Ferri</span>
-    </div>
-  </section>
-
   <!-- Carousel -->
   <main class="carousel-area">
 
@@ -440,6 +459,23 @@
     </div>
 
   </main>
+
+  <!-- Services Strip -->
+  <section class="services-strip">
+    <div class="services-row">
+      <span class="service-item">Executive Representation</span>
+      <div class="svc-sep"></div>
+      <span class="service-item">Strategic Advisory</span>
+      <div class="svc-sep"></div>
+      <span class="service-item">Market Expansion</span>
+    </div>
+    <p class="geo-line">Singapore &nbsp;&bull;&nbsp; United Arab Emirates</p>
+    <div class="founder-rule"></div>
+    <div class="founder-block">
+      <span class="founder-role">Founder &amp; Managing Partner</span>
+      <span class="founder-name">Enrico Ferri</span>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
