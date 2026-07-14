@@ -131,6 +131,78 @@
       color: rgba(201,162,39,0.6);
     }
 
+    .launching-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(245,243,238,0.45);
+      margin-top: 14px;
+      display: block;
+    }
+
+    /* ── SERVICES STRIP ─────────────────────────────────── */
+    .services-strip {
+      flex: 0 0 auto;
+      text-align: center;
+      padding: 8px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .services-strip .service-line {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: rgba(245,243,238,0.55);
+    }
+
+    .services-strip .geo-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 0.28em;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    .services-strip .divider-rule {
+      width: 1px;
+      height: 18px;
+      background: rgba(201,162,39,0.3);
+      margin: 4px 0;
+    }
+
+    .services-strip .founder-block {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .services-strip .founder-role {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: rgba(245,243,238,0.35);
+    }
+
+    .services-strip .founder-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: rgba(245,243,238,0.75);
+    }
+
     /* ── CAROUSEL AREA ──────────────────────────────────── */
     .carousel-area {
       flex: 1 1 auto;
@@ -291,8 +363,9 @@
     /* ── FADE IN ─────────────────────────────────────────── */
     header  { animation: fadeDown 700ms ease both; }
     .coming-soon { animation: fadeDown 700ms 120ms ease both; }
-    .carousel-area { animation: fadeDown 700ms 220ms ease both; }
-    footer  { animation: fadeDown 700ms 320ms ease both; }
+    .services-strip { animation: fadeDown 700ms 200ms ease both; }
+    .carousel-area { animation: fadeDown 700ms 300ms ease both; }
+    footer  { animation: fadeDown 700ms 400ms ease both; }
 
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(12px); }
@@ -315,12 +388,28 @@
     </div>
   </header>
 
-  <!-- Coming Soon Title -->
+  <!-- Hero Title -->
   <section class="coming-soon">
     <span class="coming-soon-label">sygnific.global</span>
-    <h1>Coming <em>Soon</em></h1>
+    <h1>Executive <em>Growth</em> Platform</h1>
     <div class="coming-soon-rule">
       <span>Executive Advisory</span>
+    </div>
+    <span class="launching-label">Launching July 2026</span>
+  </section>
+
+  <!-- Services Strip -->
+  <section class="services-strip">
+    <span class="service-line">Executive Representation</span>
+    <div class="divider-rule"></div>
+    <span class="service-line">Strategic Advisory</span>
+    <div class="divider-rule"></div>
+    <span class="service-line">Market Expansion</span>
+    <div class="divider-rule"></div>
+    <span class="geo-line">Singapore &nbsp;•&nbsp; United Arab Emirates</span>
+    <div class="founder-block">
+      <span class="founder-role">Founder &amp; Managing Partner</span>
+      <span class="founder-name">Enrico Ferri</span>
     </div>
   </section>
 
