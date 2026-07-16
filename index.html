@@ -3,548 +3,3033 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sygnific — Executive advisory for those building what comes next. Launching soon.">
-  <title>SYGNIFIC — Launching Soon</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- SEO -->
+  <title>Sygnific.Global | International Growth &amp; Execution Partner — APAC, Middle East, EMEA</title>
+  <meta name="description" content="Sygnific partners with ambitious organisations to accelerate international growth through executive advisory, regional market expansion, commercial leadership, and strategic execution across APAC, EMEA and the Middle East.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Sygnific — International Growth &amp; Execution Partner">
+  <meta property="og:description" content="Driving Growth Across APAC, EMEA &amp; Beyond. Executive advisory and market expansion for ambitious organisations.">
+  <meta property="og:url"         content="https://sygnific.global/">
+  <meta property="og:image"       content="https://sygnific.global/assets/images/og-home.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://sygnific.global/">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ============================================================
+       HOME PAGE — Page-specific styles
+       ============================================================ */
 
-    :root {
-      --gold: #C9A227;
-      --navy: #0B1628;
-      --speed: 1000ms;
+    /* ── HERO ─────────────────────────────────────────────────── */
+
+    .hero-apac {
+      color: var(--color-gold);
+      font-weight: var(--font-weight-demi);
     }
 
-    html, body {
-      width: 100%;
-      min-height: 100%;
-      background: var(--navy);
-      font-family: 'Montserrat', sans-serif;
+    .hero-emea {
+      color: var(--color-ivory);
+      font-weight: var(--font-weight-demi);
     }
 
-    .page {
+    .home-hero {
       min-height: 100dvh;
       display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    /* ── HEADER ─────────────────────────────────────────── */
-    header {
-      flex: 0 0 auto;
-      display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 20px 48px;
-      background: var(--navy);
-      border-bottom: 1px solid rgba(201,162,39,0.18);
-    }
-
-    .logo-badge {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .logo-badge img {
-      height: 130px;
-      width: auto;
-      display: block;
-      filter: brightness(0) invert(1);
-    }
-
-    .slide-counter {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 15px;
-      font-weight: 300;
-      color: rgba(245,243,238,0.4);
-      letter-spacing: 0.15em;
-    }
-
-    .slide-counter em {
-      font-style: normal;
-      color: var(--gold);
-      font-size: 20px;
-    }
-
-    /* ── COMING SOON BANNER ──────────────────────────────── */
-    .coming-soon {
-      flex: 0 0 auto;
-      text-align: center;
-      padding: 36px 24px 28px;
-    }
-
-    .coming-soon-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: 0.55em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .coming-soon h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 8vw, 96px);
-      font-weight: 300;
-      letter-spacing: 0.12em;
-      color: #F5F3EE;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .coming-soon h1 em {
-      font-style: italic;
-      color: var(--gold);
-      font-weight: 300;
-    }
-
-    .coming-soon-rule {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .coming-soon-rule::before,
-    .coming-soon-rule::after {
-      content: '';
-      height: 1px;
-      width: 80px;
-      background: linear-gradient(to right, transparent, rgba(201,162,39,0.5));
-    }
-
-    .coming-soon-rule::after {
-      background: linear-gradient(to left, transparent, rgba(201,162,39,0.5));
-    }
-
-    .coming-soon-rule span {
-      font-size: 9px;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: rgba(201,162,39,0.6);
-    }
-
-    .launching-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
-      font-weight: 300;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: rgba(245,243,238,0.45);
-      margin-top: 14px;
-      display: block;
-    }
-
-    /* ── SERVICES STRIP ─────────────────────────────────── */
-    .services-strip {
-      flex: 0 0 auto;
-      text-align: center;
-      padding: 36px 24px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0;
       position: relative;
+      overflow: hidden;
     }
 
-    .services-strip::before {
+    /* Infrastructure grid overlay */
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(176, 141, 87, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 141, 87, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding-top: calc(var(--header-height) + var(--space-24));
+      padding-bottom: var(--space-32);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-4);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-8);
+    }
+
+    .hero-eyebrow::before {
       content: '';
       display: block;
-      width: 240px;
+      width: 36px;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(201,162,39,0.45), transparent);
-      margin-bottom: 32px;
-    }
-
-    /* three services in a horizontal row */
-    .services-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-
-    .services-row .service-item {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: rgba(245,243,238,0.85);
-      flex: 1;
-      text-align: center;
-    }
-
-    .services-row .svc-sep {
-      width: 1px;
-      height: 26px;
-      background: rgba(201,162,39,0.5);
+      background: var(--color-gold);
       flex-shrink: 0;
     }
 
-    .geo-line {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
+    .hero-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 5.5vw, 5.25rem);
+      font-weight: 300;
+      line-height: 1.06;
+      letter-spacing: -0.02em;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-8);
+      max-width: 800px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--color-gold);
+    }
+
+    .hero-subhead {
+      font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
+      line-height: 1.85;
+      color: rgba(247, 245, 241, 0.65);
+      max-width: 620px;
+      margin-bottom: var(--space-12);
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    /* Decorative circle — right side on large screens */
+    .hero-deco {
+      position: absolute;
+      right: 8%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(176, 141, 87, 0.09);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-deco::before {
+      content: '';
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(176, 141, 87, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero-deco::after {
+      content: '';
+      position: absolute;
+      inset: 56px;
+      border: 1px solid rgba(176, 141, 87, 0.035);
+      border-radius: 50%;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: var(--space-10);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      color: rgba(247, 245, 241, 0.25);
+      font-size: 0.625rem;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      z-index: 2;
+      text-decoration: none;
+    }
+
+    .hero-scroll-line {
+      width: 2px;
+      height: 52px;
+      background: linear-gradient(to bottom, #fff 0%, var(--color-gold) 60%, transparent 100%);
+      opacity: 0.85;
+      animation: scroll-pulse 2.2s ease-in-out infinite;
+      border-radius: 2px;
+    }
+
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.7; transform: scaleY(0.75); }
+    }
+
+    /* ── SUPPORTING STATEMENT + VALUE CARDS ───────────────────── */
+
+    .home-support {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+    }
+
+    .support-statement {
+      max-width: 820px;
+      margin: 0 auto var(--space-20);
+      text-align: center;
+    }
+
+    .support-statement p {
+      font-size: var(--text-lg);
+      line-height: 1.85;
+      color: var(--color-text);
+      max-width: none;
+      margin-bottom: var(--space-4);
+    }
+
+    .support-statement .support-bold {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 2.8vw, 3rem);
+      font-weight: 600;
+      color: var(--color-navy);
+      margin-block: var(--space-6);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      max-width: none;
+    }
+
+    .support-statement p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* Value cards */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-bottom: var(--space-20);
+    }
+
+    .value-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-ivory-dark);
+      padding: var(--space-10);
+      transition:
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        transform var(--transition-slow);
+    }
+
+    .value-card:hover {
+      border-color: rgba(176, 141, 87, 0.4);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      color: var(--color-gold);
+      margin-bottom: var(--space-5);
+    }
+
+    .value-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+      line-height: 1.2;
+    }
+
+    .value-text {
+      font-size: var(--text-sm);
+      line-height: 1.8;
+      color: var(--color-text-light);
+      max-width: none;
+    }
+
+    .support-closing {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2.8vw, var(--text-4xl));
       font-weight: 300;
       font-style: italic;
-      letter-spacing: 0.24em;
-      color: var(--gold);
-      margin-top: 20px;
+      color: var(--color-navy);
+      max-width: 920px;
+      margin: 0 auto;
+      line-height: 1.35;
     }
 
-    /* thin rule between geo and founder */
-    .founder-rule {
-      width: 40px;
-      height: 1px;
-      background: rgba(201,162,39,0.35);
-      margin: 24px auto 20px;
+    /* ── WHO WE ARE ───────────────────────────────────────────── */
+
+    .home-who {
+      background: var(--color-white);
+      padding-block: var(--space-24);
     }
 
-    .founder-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
+    .who-intro {
+      max-width: 840px;
+      margin: 0 auto var(--space-20);
     }
 
-    .founder-role {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.48em;
-      text-transform: uppercase;
-      color: rgba(245,243,238,0.5);
+    .who-intro p {
+      font-size: clamp(var(--text-base), 1.2vw, var(--text-lg));
+      line-height: 1.9;
+      color: var(--color-text);
+      max-width: none;
+      margin-bottom: var(--space-5);
     }
 
-    .founder-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px;
-      font-weight: 300;
-      letter-spacing: 0.2em;
-      color: rgba(245,243,238,0.92);
-      line-height: 1.1;
+    .who-intro p:last-child {
+      margin-bottom: 0;
     }
 
-    /* ── CAROUSEL AREA ──────────────────────────────────── */
-    .carousel-area {
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px 0 36px;
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2);
+      margin-bottom: var(--space-16);
     }
 
-    /* Fixed-ratio track matching the image proportions */
-    .carousel-track {
+    .approach-col {
+      padding: var(--space-10) var(--space-8) var(--space-10) 0;
       position: relative;
-      width: 100%;
-      max-width: 1521px;
-      /* Use contain so each image shows fully without cropping */
-      background: var(--navy);
-      /* Aspect ratio of the tallest image: 1521×274 */
-      aspect-ratio: 1521 / 274;
     }
 
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity var(--speed) ease;
-      pointer-events: none;
+    .approach-col:not(:last-child) {
+      border-right: 1px solid var(--color-ivory-dark);
+      padding-right: var(--space-10);
+      margin-right: var(--space-8);
     }
 
-    .slide.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .slide img {
-      width: 100%;
-      height: 100%;
-      /* contain keeps all 3 images fully visible without any cropping */
-      object-fit: contain;
+    .approach-num {
+      font-family: var(--font-heading);
+      font-size: 7rem;
+      font-weight: 300;
+      line-height: 1;
+      color: rgba(176, 141, 87, 0.15);
+      letter-spacing: -0.04em;
+      margin-bottom: var(--space-1);
       display: block;
     }
 
-    /* ── PROGRESS + DOTS ─────────────────────────────────── */
-    .carousel-controls {
-      width: 100%;
-      max-width: 1521px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .progress-wrap {
-      width: 100%;
-      height: 2px;
-      background: rgba(245,243,238,0.07);
-    }
-
-    .progress-fill {
-      height: 100%;
-      width: 0%;
-      background: var(--gold);
-    }
-
-    .dots {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: rgba(245,243,238,0.22);
-      border: none;
-      cursor: pointer;
-      transition: all 350ms ease;
-      padding: 0;
-    }
-
-    .dot.active {
-      width: 30px;
-      border-radius: 4px;
-      background: var(--gold);
-    }
-
-    .dot:hover:not(.active) {
-      background: rgba(245,243,238,0.5);
-    }
-
-    /* ── FOOTER ─────────────────────────────────────────── */
-    footer {
-      flex: 0 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px 48px;
-      border-top: 1px solid rgba(201,162,39,0.12);
-      background: var(--navy);
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      color: rgba(245,243,238,0.45);
-      text-decoration: none;
-      font-size: 11px;
+    .approach-title {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 2.5vw, var(--text-4xl));
       font-weight: 300;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      transition: color 250ms ease;
+      color: var(--color-navy);
+      margin-bottom: var(--space-5);
+      line-height: 1.1;
     }
 
-    .contact-link:hover { color: var(--gold); }
+    .approach-title em {
+      color: var(--color-gold);
+      font-style: italic;
+    }
 
-    .contact-link svg {
+    .approach-text {
+      font-size: var(--text-sm);
+      line-height: 1.85;
+      color: var(--color-text-light);
+      max-width: none;
+    }
+
+    /* Why Choose panel */
+    .why-panel {
+      background: var(--color-navy);
+      padding: var(--space-12);
+      margin-bottom: var(--space-12);
+    }
+
+    .why-panel-title {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 3vw, var(--text-5xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-8);
+    }
+
+    .why-checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4) var(--space-12);
+    }
+
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      color: rgba(247, 245, 241, 0.75);
+    }
+
+    .why-check {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      color: var(--color-gold);
+      margin-top: 3px;
+    }
+
+    /* ── WHAT WE DO ───────────────────────────────────────────── */
+
+    .home-what {
+      background: var(--color-navy);
+      padding-block: var(--space-24);
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(176, 141, 87, 0.12);
+      border: 1px solid rgba(176, 141, 87, 0.12);
+      margin-block: var(--space-16);
+    }
+
+    .cap-card {
+      background: var(--color-navy);
+      padding: var(--space-10) var(--space-10);
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition-base);
+    }
+
+    .cap-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--color-gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-slow);
+    }
+
+    .cap-card:hover {
+      background: var(--color-navy-light);
+    }
+
+    .cap-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .cap-icon {
+      width: 40px;
+      height: 40px;
+      color: var(--color-gold);
+      margin-bottom: var(--space-6);
+    }
+
+    .cap-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-4);
+      line-height: 1.2;
+    }
+
+    .cap-text {
+      font-size: var(--text-sm);
+      line-height: 1.85;
+      color: rgba(247, 245, 241, 0.55);
+      max-width: none;
+      margin-bottom: var(--space-6);
+    }
+
+    .cap-link {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: gap var(--transition-base), opacity var(--transition-base);
+    }
+
+    .cap-link:hover {
+      gap: var(--space-3);
+      opacity: 0.8;
+    }
+
+    .cap-link svg {
       width: 14px;
       height: 14px;
       flex-shrink: 0;
     }
 
-    /* ── MOBILE ──────────────────────────────────────────── */
-    @media (max-width: 680px) {
-      header { padding: 14px 20px; }
+    .philosophy-block {
+      border-left: 2px solid var(--color-gold);
+      padding-left: var(--space-8);
+      max-width: 760px;
+      margin: 0 auto var(--space-16);
+    }
 
-      .logo-badge img { height: 100px; }
-      .slide-counter { display: none; }
-      header { justify-content: center; }
+    .philosophy-block p {
+      color: rgba(247, 245, 241, 0.65);
+      font-size: var(--text-base);
+      line-height: 1.9;
+      max-width: none;
+      margin-bottom: var(--space-3);
+    }
 
-      .coming-soon { padding: 24px 20px 16px; }
+    .philosophy-block p:last-child {
+      margin-bottom: 0;
+      color: rgba(247, 245, 241, 0.85);
+      font-style: italic;
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+    }
 
-      /* Stack all 3 images vertically on mobile */
-      .carousel-track {
-        position: static;
-        aspect-ratio: auto;
-        background: transparent;
+    /* ── WHY SYGNIFIC ─────────────────────────────────────────── */
+
+    .home-why {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+    }
+
+    .why-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      margin-bottom: var(--space-20);
+      align-items: start;
+    }
+
+    .why-intro-grid p {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      max-width: none;
+      margin-bottom: var(--space-4);
+    }
+
+    .why-intro-grid p:last-child {
+      margin-bottom: 0;
+    }
+
+    .why-accent-block {
+      background: var(--color-navy);
+      padding: var(--space-10);
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .why-accent-quote {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 3vw, var(--text-5xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-ivory);
+      line-height: 1.2;
+      margin-bottom: var(--space-6);
+    }
+
+    .why-accent-sub {
+      font-size: var(--text-sm);
+      color: rgba(247, 245, 241, 0.5);
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: var(--space-16);
+      row-gap: 0;
+      margin-bottom: var(--space-16);
+    }
+
+    .benefit-card {
+      padding: var(--space-10) 0;
+      border-top: 1px solid rgba(176, 141, 87, 0.25);
+    }
+
+    .benefit-num {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-gold);
+      letter-spacing: var(--tracking-widest);
+      line-height: 1;
+      margin-bottom: var(--space-5);
+    }
+
+    .benefit-title {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-xl), 2vw, var(--text-2xl));
+      font-weight: 400;
+      color: var(--color-navy);
+      margin-bottom: var(--space-3);
+      line-height: 1.2;
+    }
+
+    .benefit-text {
+      font-size: var(--text-sm);
+      line-height: 1.85;
+      color: var(--color-text-light);
+      max-width: none;
+    }
+
+    /* Comparison table */
+    .compare-wrap {
+      background: var(--color-navy);
+      padding: var(--space-12);
+      margin-bottom: var(--space-16);
+    }
+
+    .compare-title {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 3vw, var(--text-5xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-10);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table thead th {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      padding: var(--space-4) var(--space-6);
+      text-align: left;
+      border-bottom: 1px solid rgba(176, 141, 87, 0.2);
+    }
+
+    .compare-table thead th:first-child {
+      color: rgba(247, 245, 241, 0.35);
+    }
+
+    .compare-table thead th:last-child {
+      color: var(--color-gold);
+      text-align: center;
+    }
+
+    .cone-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .compare-cone {
+      display: block;
+      width: 100%;
+      max-width: 220px;
+      height: 64px;
+      overflow: visible;
+      animation: cone-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes cone-pulse {
+      0%, 100% { opacity: 0.65; }
+      50%       { opacity: 1; }
+    }
+
+    .compare-table td {
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-sm);
+      line-height: 1.65;
+      border-top: 1px solid rgba(247, 245, 241, 0.05);
+      vertical-align: top;
+    }
+
+    .compare-table td:first-child {
+      color: rgba(247, 245, 241, 0.4);
+      width: 50%;
+    }
+
+    .compare-table td:last-child {
+      color: rgba(247, 245, 241, 0.85);
+      background: rgba(176, 141, 87, 0.06);
+      text-align: center;
+    }
+
+    /* Commitment block */
+    .commitment-intro {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto var(--space-12);
+    }
+
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-bottom: var(--space-16);
+    }
+
+    .commitment-item {
+      text-align: center;
+      padding: var(--space-10) var(--space-6);
+      background: var(--color-white);
+      border-top: 2px solid rgba(176, 141, 87, 0.3);
+      transition: opacity 500ms var(--ease-out), transform 500ms var(--ease-out), background 0.35s ease, border-color 0.35s ease;
+    }
+
+    .commitment-item:hover {
+      background: var(--color-navy);
+      border-top-color: var(--color-gold);
+    }
+
+    .commitment-item:hover .commitment-word {
+      color: #fff;
+    }
+
+    .commitment-item:hover .commitment-def {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .commitment-word {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 3vw, var(--text-5xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-navy);
+      margin-bottom: var(--space-4);
+      line-height: 1;
+      transition: color 0.35s ease;
+    }
+
+    .commitment-def {
+      font-size: var(--text-xs);
+      line-height: 1.7;
+      color: var(--color-text-light);
+      max-width: none;
+      transition: color 0.35s ease;
+    }
+
+    /* ── INDUSTRIES ───────────────────────────────────────────── */
+
+    .home-industries {
+      background: var(--color-navy-light);
+      padding-block: var(--space-24);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-block: var(--space-16);
+    }
+
+    .industry-card {
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(176, 141, 87, 0.1);
+      padding: var(--space-8);
+      transition: background var(--transition-base), border-color var(--transition-base);
+    }
+
+    .industry-card:hover {
+      background: rgba(255, 255, 255, 0.065);
+      border-color: rgba(176, 141, 87, 0.28);
+    }
+
+    .industry-icon {
+      width: 40px;
+      height: 40px;
+      color: var(--color-gold);
+      margin-bottom: var(--space-5);
+    }
+
+    .industry-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-3);
+      line-height: 1.2;
+    }
+
+    .industry-text {
+      font-size: var(--text-sm);
+      line-height: 1.85;
+      color: rgba(247, 245, 241, 0.55);
+      max-width: none;
+    }
+
+    /* Industry value + geo split */
+    .industry-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      margin-bottom: var(--space-16);
+      align-items: start;
+    }
+
+    .value-list-block h3 {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-6);
+    }
+
+    .value-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .value-list-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: rgba(247, 245, 241, 0.7);
+      line-height: 1.6;
+    }
+
+    .value-list-item::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px;
+      height: 1px;
+      background: var(--color-gold);
+    }
+
+    .geo-block h3 {
+      font-family: var(--font-heading);
+      font-size: var(--text-3xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-6);
+    }
+
+    .geo-region {
+      margin-bottom: var(--space-6);
+    }
+
+    .geo-region-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-2);
+    }
+
+    .geo-region-countries {
+      font-size: var(--text-sm);
+      line-height: 1.75;
+      color: rgba(247, 245, 241, 0.6);
+    }
+
+    .industry-closing {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-xl), 2vw, var(--text-3xl));
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(247, 245, 241, 0.85);
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto var(--space-12);
+      line-height: 1.4;
+      text-wrap: balance;
+    }
+
+    /* ── LEADERSHIP TEASER ────────────────────────────────────── */
+
+    .home-leadership {
+      background: var(--color-white);
+      padding-block: var(--space-24);
+    }
+
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: var(--space-16);
+      align-items: center;
+      margin-top: var(--space-12);
+    }
+
+    .leader-photo {
+      aspect-ratio: 3/4;
+      background: var(--color-navy-mid);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .leader-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .leader-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: var(--space-6);
+      background: linear-gradient(to top, rgba(11,27,43,0.95) 0%, transparent 100%);
+    }
+
+    .leader-name {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-1);
+    }
+
+    .leader-role {
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .leader-bio p {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      max-width: none;
+      margin-bottom: var(--space-4);
+    }
+
+    /* ── INSIGHTS ─────────────────────────────────────────────── */
+
+    .home-insights {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-block: var(--space-12);
+    }
+
+    .insight-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-ivory-dark);
+      display: flex;
+      flex-direction: column;
+      transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-slow);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .insight-card:hover {
+      border-color: rgba(176, 141, 87, 0.3);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+
+    .insight-img {
+      aspect-ratio: 16/9;
+      background: var(--color-navy-mid);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .insight-img-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .insight-img-placeholder svg {
+      width: 40px;
+      height: 40px;
+      color: rgba(176, 141, 87, 0.25);
+    }
+
+    .insight-body {
+      padding: var(--space-6);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .insight-tag {
+      font-size: 0.625rem;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-3);
+    }
+
+    .insight-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 300;
+      color: var(--color-navy);
+      line-height: 1.25;
+      margin-bottom: var(--space-3);
+      flex: 1;
+    }
+
+    .insight-excerpt {
+      font-size: var(--text-sm);
+      line-height: 1.75;
+      color: var(--color-text-light);
+      max-width: none;
+      margin-bottom: var(--space-4);
+    }
+
+    .insight-read-more {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-navy);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: color var(--transition-base), gap var(--transition-base);
+    }
+
+    .insight-card:hover .insight-read-more {
+      color: var(--color-gold);
+      gap: var(--space-3);
+    }
+
+    /* ── CONTACT / START CONVERSATION ─────────────────────────── */
+
+    .home-contact {
+      background: var(--color-navy);
+      padding-block: var(--space-24);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      margin-top: var(--space-12);
+    }
+
+    .contact-intro {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      color: rgba(247, 245, 241, 0.65);
+      max-width: none;
+      margin-bottom: var(--space-10);
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: var(--space-10);
+    }
+
+    .process-step {
+      display: flex;
+      gap: var(--space-6);
+      padding-bottom: var(--space-8);
+      position: relative;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 1px;
+      background: rgba(176, 141, 87, 0.2);
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(176, 141, 87, 0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 300;
+      color: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .step-body {}
+
+    .step-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-2);
+    }
+
+    .step-text {
+      font-size: var(--text-sm);
+      line-height: 1.75;
+      color: rgba(247, 245, 241, 0.55);
+      max-width: none;
+    }
+
+    .explore-list {
+      margin-bottom: var(--space-10);
+    }
+
+    .explore-list-title {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-5);
+    }
+
+    .explore-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .explore-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: rgba(247, 245, 241, 0.65);
+    }
+
+    .explore-item::before {
+      content: '';
+      flex-shrink: 0;
+      width: 16px;
+      height: 1px;
+      background: var(--color-gold);
+    }
+
+    /* Contact form side */
+    .contact-form-wrap {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(176, 141, 87, 0.15);
+      padding: var(--space-10);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-5);
+    }
+
+    .form-label {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.5);
+      margin-bottom: var(--space-2);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(247, 245, 241, 0.12);
+      color: var(--color-ivory);
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      padding: var(--space-4) var(--space-5);
+      transition: border-color var(--transition-base), background var(--transition-base);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: rgba(247, 245, 241, 0.25);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: rgba(176, 141, 87, 0.5);
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-success,
+    .form-error {
+      padding: var(--space-4);
+      font-size: var(--text-sm);
+      margin-top: var(--space-4);
+    }
+
+    .form-success { color: #7dbf94; border: 1px solid rgba(125, 191, 148, 0.3); }
+    .form-error   { color: #e07070; border: 1px solid rgba(224, 112, 112, 0.3); }
+
+    .contact-info {
+      margin-top: var(--space-8);
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(176, 141, 87, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .contact-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .contact-info-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .contact-info-value {
+      font-size: var(--text-sm);
+      line-height: 1.65;
+      color: rgba(247, 245, 241, 0.55);
+    }
+
+    .contact-info-value a {
+      color: rgba(247, 245, 241, 0.55);
+      transition: color var(--transition-base);
+    }
+
+    .contact-info-value a:hover {
+      color: var(--color-gold);
+    }
+
+    .contact-closing {
+      margin-top: var(--space-20);
+      padding-top: var(--space-12);
+      border-top: 1px solid rgba(176, 141, 87, 0.1);
+      text-align: center;
+    }
+
+    .contact-closing p {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-xl), 2vw, var(--text-3xl));
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(247, 245, 241, 0.7);
+      max-width: 900px;
+      margin: 0 auto;
+      line-height: 1.45;
+      text-wrap: balance;
+    }
+
+    /* ── SECTION INTRO TEXT ───────────────────────────────────── */
+    .section-intro {
+      max-width: 780px;
+    }
+
+    .section-intro p {
+      font-size: var(--text-base);
+      line-height: 1.9;
+      max-width: none;
+      margin-bottom: var(--space-4);
+    }
+
+    .section-intro p:last-child { margin-bottom: 0; }
+
+    /* ── CTA BLOCK ────────────────────────────────────────────── */
+    .cta-block {
+      text-align: center;
+      padding-top: var(--space-16);
+    }
+
+    .cta-block-label {
+      display: block;
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+      color: var(--color-text-light);
+      max-width: 600px;
+      margin-inline: auto;
+      margin-bottom: var(--space-8);
+    }
+
+    .cta-block-label--light {
+      color: rgba(247, 245, 241, 0.55);
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+
+    /* ── APPROACH COLUMN ANIMATIONS ──────────────────────────── */
+
+    .approach-col {
+      opacity: 0;
+      transform: translateY(32px);
+      transition:
+        opacity 700ms var(--ease-out),
+        transform 700ms var(--ease-out);
+    }
+
+    .approach-col.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .approach-col:nth-child(1) { transition-delay: 0ms; }
+    .approach-col:nth-child(2) { transition-delay: 140ms; }
+    .approach-col:nth-child(3) { transition-delay: 280ms; }
+
+    /* Number reveal: starts big+transparent, settles to final state */
+    .approach-num {
+      display: block;
+      transform-origin: left top;
+      transition:
+        opacity 900ms var(--ease-out),
+        transform 900ms var(--ease-out);
+      opacity: 0;
+      transform: scale(1.15) translateY(-8px);
+    }
+
+    .approach-col.is-visible .approach-num {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Title slides up after number */
+    .approach-title {
+      opacity: 0;
+      transform: translateY(16px);
+      transition:
+        opacity 600ms var(--ease-out),
+        transform 600ms var(--ease-out);
+    }
+
+    .approach-col.is-visible .approach-title {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 120ms;
+    }
+
+    /* Text appears last */
+    .approach-col .approach-text {
+      opacity: 0;
+      transform: translateY(12px);
+      transition:
+        opacity 500ms var(--ease-out),
+        transform 500ms var(--ease-out);
+    }
+
+    .approach-col.is-visible .approach-text {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 220ms;
+    }
+
+    /* Stagger delays offset per column */
+    .approach-col:nth-child(2) .approach-num   { transition-delay: 140ms; }
+    .approach-col:nth-child(2) .approach-title { transition-delay: 260ms; }
+    .approach-col:nth-child(2) .approach-text  { transition-delay: 360ms; }
+    .approach-col:nth-child(3) .approach-num   { transition-delay: 280ms; }
+    .approach-col:nth-child(3) .approach-title { transition-delay: 400ms; }
+    .approach-col:nth-child(3) .approach-text  { transition-delay: 500ms; }
+
+    /* Why panel: slide up from bottom */
+    .why-panel {
+      opacity: 0;
+      transform: translateY(40px);
+      transition:
+        opacity 700ms var(--ease-out),
+        transform 700ms var(--ease-out);
+    }
+
+    .why-panel.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Value cards: stagger with slight horizontal drift */
+    .value-card {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 600ms var(--ease-out),
+        transform 600ms var(--ease-out),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+    }
+
+    .value-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+
+    @media (max-width: 1024px) {
+      .value-grid          { grid-template-columns: repeat(2, 1fr); }
+      .cap-grid            { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid        { column-gap: var(--space-10); }
+      .commitment-grid     { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid       { grid-template-columns: repeat(2, 1fr); }
+      .insights-grid       { grid-template-columns: repeat(2, 1fr); }
+      .leadership-grid     { grid-template-columns: 1fr; max-width: 560px; }
+      .industry-split      { grid-template-columns: 1fr; gap: var(--space-12); }
+      .why-intro-grid      { grid-template-columns: 1fr; }
+      .hero-deco           { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      .value-grid          { grid-template-columns: 1fr; }
+      .approach-grid       { grid-template-columns: 1fr; }
+      .approach-col        { border-right: none; border-bottom: 1px solid var(--color-ivory-dark); }
+      .approach-col:last-child { border-bottom: none; }
+      .why-checklist       { grid-template-columns: 1fr; }
+      .cap-grid            { grid-template-columns: 1fr; }
+      .benefit-grid        { grid-template-columns: 1fr; }
+      .commitment-grid     { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid       { grid-template-columns: 1fr; }
+      .insights-grid       { grid-template-columns: 1fr; }
+      .contact-grid        { grid-template-columns: 1fr; }
+      .compare-wrap        { padding: var(--space-8) var(--space-5); }
+      .compare-table,
+      .compare-table thead,
+      .compare-table tbody,
+      .compare-table tr,
+      .compare-table th,
+      .compare-table td    { display: block; width: 100%; box-sizing: border-box; }
+      .compare-table thead { display: none; }
+      .compare-table tbody tr {
+        margin-bottom: var(--space-4);
+        border: 1px solid rgba(176, 141, 87, 0.15);
       }
-
-      .slide {
-        position: static;
-        opacity: 1 !important;
-        pointer-events: auto;
+      .compare-table td {
+        border-top: none;
+        padding: var(--space-3) var(--space-4);
+        text-align: left;
+        width: 100%;
+      }
+      .compare-table td:first-child {
+        width: 100%;
+        color: rgba(247, 245, 241, 0.35);
+        padding-bottom: var(--space-2);
+        border-bottom: 1px solid rgba(176,141,87,0.1);
+      }
+      .compare-table td:first-child::before {
+        content: 'Traditional';
         display: block;
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(247,245,241,0.2);
+        margin-bottom: var(--space-1);
       }
-
-      .slide + .slide { margin-top: 4px; }
-
-      .slide img { object-fit: contain; height: auto; }
-
-      .carousel-controls { display: none; }
-
-      footer { padding: 14px 20px; }
-
-      .services-row { flex-direction: column; gap: 12px; }
-      .services-row .svc-sep { width: 30px; height: 1px; }
-      .services-row .service-item { padding: 0; letter-spacing: 0.32em; }
+      .compare-table td:last-child {
+        background: rgba(176, 141, 87, 0.08);
+        color: rgba(247, 245, 241, 0.85);
+      }
+      .compare-table td:last-child::before {
+        content: 'Sygnific';
+        display: block;
+        font-size: 0.6rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-gold);
+        margin-bottom: var(--space-1);
+      }
     }
 
-    /* ── FADE IN ─────────────────────────────────────────── */
-    header  { animation: fadeDown 700ms ease both; }
-    .coming-soon { animation: fadeDown 700ms 120ms ease both; }
-    .carousel-area { animation: fadeDown 700ms 220ms ease both; }
-    .services-strip { animation: fadeDown 700ms 360ms ease both; }
-    footer  { animation: fadeDown 700ms 480ms ease both; }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: translateY(0); }
+    @media (max-width: 480px) {
+      .commitment-grid     { grid-template-columns: 1fr; }
+      .hero-ctas           { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn      { width: 100%; justify-content: center; }
+      .geo-strip           { height: auto; }
+      .approach-col        { padding: var(--space-6) 0; border: none; margin: 0; }
+      .benefit-grid        { grid-template-columns: 1fr; column-gap: 0; }
+      .cap-grid            { grid-template-columns: 1fr; }
+      .industry-grid       { grid-template-columns: 1fr; }
+      .compare-wrap        { padding: var(--space-5) var(--space-4); }
+      .compare-title       { font-size: var(--text-xl); }
     }
+    /* ── PHOTO BACKGROUNDS ──────────────────────────────────────── */
+
+    /* Hero — static navy gradient */
+    .home-hero {
+      background:
+        radial-gradient(ellipse at 18% 55%, rgba(11, 47, 90, 0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 25%, rgba(176, 141, 87, 0.07) 0%, transparent 45%),
+        linear-gradient(140deg, #071219 0%, #0D1E2D 45%, #0B1B2B 100%);
+    }
+
+    /* Ivory / white sections — ultra-faint texture */
+    .home-support,
+    .home-who,
+    .home-why,
+    .home-insights,
+    .home-leadership {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-support::before  { background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=60&auto=format&fit=crop'); }
+    .home-who::before      { background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1920&q=60&auto=format&fit=crop'); }
+    .home-why::before      { background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=60&auto=format&fit=crop'); }
+    .home-insights::before { background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=60&auto=format&fit=crop'); }
+    .home-leadership::before { background-image: none; }
+
+    .home-support::before,
+    .home-who::before,
+    .home-why::before,
+    .home-insights::before,
+    .home-leadership::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ensure content sits above the pseudo-element */
+    .home-support .container,
+    .home-who .container,
+    .home-why .container,
+    .home-insights .container,
+    .home-leadership .container { position: relative; z-index: 1; }
+
+    /* Navy sections — data center at low opacity */
+    .home-what,
+    .home-contact {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-what::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=1920&q=60&auto=format&fit=crop') center/cover no-repeat;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .home-contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1920&q=60&auto=format&fit=crop') center 60%/cover no-repeat;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .home-what .container,
+    .home-contact .container { position: relative; z-index: 1; }
+
+    /* ── GEO STRIP — Dubai | Singapore ─────────────────────────── */
+    .geo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 280px;
+      margin-block: var(--space-16);
+      overflow: hidden;
+    }
+
+    .geo-strip-panel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .geo-strip-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.8s var(--ease-out);
+    }
+
+    .geo-strip-panel:hover img {
+      transform: scale(1.04);
+    }
+
+    .geo-strip-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,27,43,0.75) 0%, rgba(11,27,43,0.2) 50%, transparent 100%);
+    }
+
+    .geo-strip-label {
+      position: absolute;
+      bottom: var(--space-6);
+      left: var(--space-8);
+      right: var(--space-8);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .geo-strip-city {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 3vw, var(--text-4xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      line-height: 1;
+    }
+
+    .geo-strip-tag {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .geo-strip-panel + .geo-strip-panel {
+      border-left: 1px solid rgba(176, 141, 87, 0.2);
+    }
+
+    @media (max-width: 640px) {
+      .geo-strip {
+        grid-template-columns: 1fr;
+        height: auto;
+        overflow: visible;
+        row-gap: 20px;
+      }
+      .geo-strip-panel { height: 200px; overflow: hidden; }
+      .geo-strip-panel + .geo-strip-panel { border-left: none; border-top: none; }
+    }
+
+    /* ── APPROACH CLOSING SENTENCE (T3) ────────────────────── */
+    .approach-closing {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-base), 1.4vw, var(--text-lg));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-text);
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-10);
+      max-width: 680px;
+      line-height: 1.6;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    /* ── APPROACH OUTCOME LABELS (H5) ──────────────────────── */
+    .approach-outcome {
+      margin-top: var(--space-6);
+      padding-top: var(--space-4);
+      border-top: 1px solid rgba(176, 141, 87, 0.2);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      opacity: 0;
+      transition: opacity 500ms var(--ease-out);
+    }
+
+    .approach-col.is-visible .approach-outcome {
+      opacity: 1;
+      transition-delay: 380ms;
+    }
+
+    .approach-col:nth-child(2) .approach-outcome { transition-delay: 520ms; }
+    .approach-col:nth-child(3) .approach-outcome { transition-delay: 660ms; }
+
+    .approach-outcome-label {
+      color: rgba(176, 141, 87, 0.5);
+    }
+
+    /* ── CONTACT LEAD (R7) ──────────────────────────────────── */
+    .contact-lead {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-lg), 1.8vw, var(--text-2xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-ivory);
+      margin-bottom: var(--space-6);
+      line-height: 1.5;
+    }
+
+    /* ── LEADER LINKEDIN LINK ───────────────────────────────── */
+    .leader-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-light);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    .leader-linkedin:hover {
+      color: var(--color-gold);
+    }
+
+    /* ── LEADER HIGHLIGHT (R5) ──────────────────────────────── */
+    .leader-highlight {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      color: var(--color-gold);
+      margin-bottom: var(--space-6);
+      text-transform: uppercase;
+    }
+
+    /* ── COMPARE INTRO TEXT (H16) ───────────────────────────── */
+    .compare-intro {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.75;
+      margin-bottom: var(--space-8);
+      max-width: 620px;
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    /* ── COMPARE TABLE SYGNIFIC COLUMN DOMINANCE (H17) ─────── */
+    .compare-table thead th:last-child {
+      background: rgba(176, 141, 87, 0.08);
+      border-left: 2px solid rgba(176, 141, 87, 0.35);
+    }
+
+    .compare-table tbody td:last-child {
+      background: rgba(176, 141, 87, 0.06);
+      border-left: 2px solid rgba(176, 141, 87, 0.25);
+      color: rgba(247, 245, 241, 0.9);
+      font-weight: 500;
+    }
+
+    /* ── FEATURED INSIGHT CARD (H13) ───────────────────────── */
+    .insight-card--featured {
+      border: 1px solid rgba(176, 141, 87, 0.45);
+      box-shadow: 0 4px 28px rgba(176, 141, 87, 0.12), 0 1px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .insight-card--featured .insight-tag {
+      color: var(--color-gold);
+      border-color: rgba(176, 141, 87, 0.4);
+    }
+
+    .insight-card--featured .insight-title {
+      font-weight: 500;
+    }
+
+
+    /* ── SPLASH SCREEN ─────────────────────────────────────────── */
+
+    #splash {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #splash.splash-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #splash-center {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    #splash-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #splash-video-1,
+    #splash-video-2 {
+      width: min(200px, 38vw);
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    #splash-progress-wrap {
+      width: 100%;
+      margin-top: 28px;
+    }
+
+    #splash-pct {
+      text-align: right;
+      padding: 0 0 8px;
+      font-family: var(--font-heading);
+      font-size: 10px;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: rgba(11, 27, 43, 0.45);
+    }
+
+    #splash-track {
+      height: 2px;
+      background: rgba(11, 27, 43, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    #splash-bar {
+      height: 100%;
+      width: 0%;
+      background: #0B1B2B;
+      border-radius: 2px;
+    }
+
   </style>
 </head>
 <body>
 
-<div class="page">
-
-  <!-- Header -->
-  <header>
-    <div class="logo-badge">
-      <img src="logo/logo-ae.png" alt="Sygnific FZ LLC">
-      <img src="logo/logo-sg.png" alt="Sygnific Pte Ltd">
+  <!-- ── SPLASH ──────────────────────────────────────────────── -->
+  <div id="splash" role="status" aria-label="Loading Sygnific">
+    <div id="splash-center">
+      <div id="splash-logos">
+        <video id="splash-video-1" src="assets/0715%20(1).mp4" autoplay muted playsinline preload="auto"></video>
+        <video id="splash-video-2" src="assets/0715%20(5).mp4" autoplay muted playsinline preload="auto"></video>
+      </div>
+      <div id="splash-progress-wrap">
+        <div id="splash-pct">0%</div>
+        <div id="splash-track">
+          <div id="splash-bar"></div>
+        </div>
+      </div>
     </div>
-    <div class="slide-counter">
-      <em id="cur">01</em> / 03
+  </div>
+
+  <script>
+    (function () {
+      var splash = document.getElementById('splash');
+
+      // Skip splash if already shown this session (e.g. navigating back from another page)
+      if (sessionStorage.getItem('sygnific_splash_shown')) {
+        splash.remove();
+        return;
+      }
+
+      var bar    = document.getElementById('splash-bar');
+      var pct    = document.getElementById('splash-pct');
+      var progress = 0;
+      var loaded = false;
+
+      document.body.style.overflow = 'hidden';
+
+      // Video 2 plays at 75% speed for a staggered feel
+      var v2 = document.getElementById('splash-video-2');
+      if (v2) v2.playbackRate = 0.75;
+
+      function setProgress(val) {
+        progress = Math.min(val, 100);
+        bar.style.width = progress + '%';
+        pct.textContent = Math.round(progress) + '%';
+      }
+
+      // Progress 0→100 over exactly 5s with smooth easing
+      var DURATION = 5000;
+      var start = performance.now();
+
+      function tick(now) {
+        var elapsed = now - start;
+        var t = Math.min(elapsed / DURATION, 1);
+        // ease-in-out curve
+        var eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        var next = eased * 100;
+        setProgress(next);
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          dismiss();
+        }
+      }
+      requestAnimationFrame(tick);
+
+      function dismiss() {
+        if (loaded) return;
+        loaded = true;
+        setProgress(100);
+
+        var video1 = document.getElementById('splash-video-1');
+        var video2 = document.getElementById('splash-video-2');
+        var progressWrap = document.getElementById('splash-progress-wrap');
+
+        // Find both header logo containers
+        var targetLogo1 = document.querySelector('.logo-pair a:first-child .logo-img-wrap');
+        var targetLogo2 = document.querySelector('.logo-pair a:nth-child(3) .logo-img-wrap');
+
+        if (targetLogo1 && targetLogo2 && video1 && video2) {
+          var v1Rect = video1.getBoundingClientRect();
+          var v2Rect = video2.getBoundingClientRect();
+          var l1Rect = targetLogo1.getBoundingClientRect();
+          var l2Rect = targetLogo2.getBoundingClientRect();
+
+          // Centers for video 1 → left header logo
+          var v1CX = v1Rect.left + v1Rect.width / 2;
+          var v1CY = v1Rect.top  + v1Rect.height / 2;
+          var l1CX = l1Rect.left + l1Rect.width / 2;
+          var l1CY = l1Rect.top  + l1Rect.height / 2;
+          var dx1    = l1CX - v1CX;
+          var dy1    = l1CY - v1CY;
+          var scale1 = l1Rect.width / v1Rect.width;
+
+          // Centers for video 2 → right header logo
+          var v2CX = v2Rect.left + v2Rect.width / 2;
+          var v2CY = v2Rect.top  + v2Rect.height / 2;
+          var l2CX = l2Rect.left + l2Rect.width / 2;
+          var l2CY = l2Rect.top  + l2Rect.height / 2;
+          var dx2    = l2CX - v2CX;
+          var dy2    = l2CY - v2CY;
+          var scale2 = l2Rect.width / v2Rect.width;
+
+          // Fade out progress bar immediately
+          progressWrap.style.transition = 'opacity 0.25s ease';
+          progressWrap.style.opacity = '0';
+
+          // Fly both videos to their respective header logos simultaneously
+          setTimeout(function () {
+            var flyTransition = 'transform 0.75s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease 0.55s';
+            video1.style.transition = flyTransition;
+            video1.style.transformOrigin = 'center center';
+            video1.style.transform = 'translate(' + dx1 + 'px, ' + dy1 + 'px) scale(' + scale1 + ')';
+            video2.style.transition = flyTransition;
+            video2.style.transformOrigin = 'center center';
+            video2.style.transform = 'translate(' + dx2 + 'px, ' + dy2 + 'px) scale(' + scale2 + ')';
+          }, 100);
+
+          // After fly completes, fade out the whole splash
+          setTimeout(function () {
+            splash.classList.add('splash-out');
+            setTimeout(function () {
+              sessionStorage.setItem('sygnific_splash_shown', '1');
+              splash.remove();
+              document.body.style.overflow = '';
+            }, 950);
+          }, 900);
+
+        } else {
+          // Fallback: simple fade
+          setTimeout(function () {
+            splash.classList.add('splash-out');
+            setTimeout(function () {
+              sessionStorage.setItem('sygnific_splash_shown', '1');
+              splash.remove();
+              document.body.style.overflow = '';
+            }, 950);
+          }, 200);
+        }
+      }
+
+      // If page loads after 5s, dismiss immediately after load
+      window.addEventListener('load', function () {
+        var elapsed = performance.now() - start;
+        if (elapsed >= DURATION) dismiss();
+      });
+    })();
+  </script>
+
+  <!-- ── HEADER (transparent — overlays dark hero) ──────────── -->
+  <header class="site-header site-header--light" role="banner">
+    <div class="header-inner">
+
+      <div class="logo-pair">
+        <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img">
+          </div>
+        </a>
+        <span class="logo-pair-sep"></span>
+        <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img">
+          </div>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/"                class="nav-link" aria-current="page">Home</a>
+        <a href="about.html"       class="nav-link">About</a>
+        <a href="solutions.html"   class="nav-link">Solutions</a>
+        <a href="industries.html"  class="nav-link">Industries</a>
+        <a href="leadership.html"  class="nav-link">Leadership</a>
+        <a href="insights.html"    class="nav-link">Insights</a>
+        <a href="contact.html"     class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="contact.html#contact-form" class="btn btn--secondary btn--sm">Begin a Partnership</a>
+      </div>
+
+      <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
     </div>
   </header>
 
-  <!-- Hero Title -->
-  <section class="coming-soon">
-    <span class="coming-soon-label">sygnific.global</span>
-    <h1>Executive <em>Growth</em> Platform</h1>
-    <div class="coming-soon-rule">
-      <span>Executive Advisory</span>
-    </div>
-    <span class="launching-label">Launching July 2026</span>
-  </section>
-
-  <!-- Carousel -->
-  <main class="carousel-area">
-
-    <div class="carousel-track">
-      <div class="slide active">
-        <img src="images/slide1.jpg" alt="Something Significant is Taking Shape" loading="eager">
-      </div>
-      <div class="slide">
-        <img src="images/slide2.jpg" alt="We're Building More Than a Website" loading="eager">
-      </div>
-      <div class="slide">
-        <img src="images/slide3.jpg" alt="Great Things Begin Quietly" loading="eager">
-      </div>
-    </div>
-
-    <div class="carousel-controls">
-      <div class="progress-wrap">
-        <div class="progress-fill" id="progress"></div>
-      </div>
-      <nav class="dots" aria-label="Slide navigation">
-        <button class="dot active" data-i="0" aria-label="Slide 1"></button>
-        <button class="dot" data-i="1" aria-label="Slide 2"></button>
-        <button class="dot" data-i="2" aria-label="Slide 3"></button>
-      </nav>
-    </div>
-
-  </main>
-
-  <!-- Services Strip -->
-  <section class="services-strip">
-    <div class="services-row">
-      <span class="service-item">Executive Representation</span>
-      <div class="svc-sep"></div>
-      <span class="service-item">Strategic Advisory</span>
-      <div class="svc-sep"></div>
-      <span class="service-item">Market Expansion</span>
-    </div>
-    <p class="geo-line">Singapore &nbsp;&bull;&nbsp; United Arab Emirates</p>
-    <div class="founder-rule"></div>
-    <div class="founder-block">
-      <span class="founder-role">Founder &amp; Managing Partner</span>
-      <span class="founder-name">Enrico Ferri</span>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <a href="mailto:info@sygnific.global" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <rect x="2" y="4" width="20" height="16" rx="2"/>
-        <path d="M2 7l10 7 10-7"/>
+  <!-- ── MOBILE NAV ─────────────────────────────────────────── -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="4" x2="20" y2="20"/>
+        <line x1="20" y1="4" x2="4" y2="20"/>
       </svg>
-      info@sygnific.global
-    </a>
+    </button>
+    <a href="/"               class="nav-link" aria-current="page">Home</a>
+    <a href="about.html"      class="nav-link">About</a>
+    <a href="solutions.html"  class="nav-link">Solutions</a>
+    <a href="industries.html" class="nav-link">Industries</a>
+    <a href="leadership.html" class="nav-link">Leadership</a>
+    <a href="insights.html"   class="nav-link">Insights</a>
+    <a href="contact.html"    class="nav-link">Contact</a>
+    <div class="mobile-nav-footer">sygnific.global</div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 1 — HERO
+         ════════════════════════════════════════════════════ -->
+    <section class="home-hero" aria-label="Hero">
+
+      <div class="hero-deco" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="hero-inner">
+
+          <h1 class="hero-headline">
+            <span class="hero-ln"><span class="hero-ln-inner">Driving Growth Across</span></span>
+            <span class="hero-ln"><span class="hero-ln-inner"><span class="hero-apac">APAC</span>, <span class="hero-emea">EMEA</span> &amp; Beyond</span></span>
+          </h1>
+
+          <p class="hero-subhead hero-sub-anim">
+            Sygnific partners with ambitious organisations to accelerate international growth through executive advisory, regional market expansion, commercial leadership, and strategic execution. We help companies enter new markets, strengthen regional operations, and build sustainable commercial success without the complexity of establishing local organisations from day one.
+          </p>
+
+          <div class="hero-ctas fade-in">
+            <a href="https://koalendar.com/u/enrico-ferri" data-koalendar-widget class="btn btn--primary btn--lg">Begin the Conversation</a>
+            <a href="solutions.html" class="btn btn--ghost btn--lg">Explore Our Solutions</a>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#support" class="hero-scroll" aria-label="Scroll to content">
+        <span class="hero-scroll-line" aria-hidden="true"></span>
+      </a>
+
+    </section>
+
+    <!-- ── SUPPORTING STATEMENT + VALUE CARDS ─────────────── -->
+    <section id="support" class="home-support" aria-label="Supporting statement">
+      <div class="container">
+
+        <div class="support-statement fade-in">
+          <p>International growth is rarely limited by opportunity. It is limited by execution.</p>
+          <p class="support-bold">Sygnific provides all four.</p>
+          <p>Sygnific combines executive leadership, regional market expertise and commercial execution to help organisations enter new markets, build strategic partnerships and deliver sustainable commercial growth.</p>
+          <p>Whether launching into a new region, strengthening an existing presence, or accelerating growth in complex international markets, we work as an extension of your executive team to transform strategy into measurable commercial outcomes.</p>
+        </div>
+
+        <div class="value-grid fade-in-group">
+
+          <div class="value-card">
+            <svg class="value-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M24 12a6 6 0 100 12 6 6 0 000-12z"/>
+              <path d="M8 40c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
+              <path d="M34 8l6 6-6 6M38 14H20"/>
+            </svg>
+            <h3 class="value-title">Executive Leadership</h3>
+            <p class="value-text">Executive-level commercial expertise with extensive international business experience.</p>
+          </div>
+
+          <div class="value-card">
+            <svg class="value-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="24" cy="24" r="16"/>
+              <path d="M24 8v32M8 24h32"/>
+              <ellipse cx="24" cy="24" rx="8" ry="16"/>
+            </svg>
+            <h3 class="value-title">Regional Market Expansion</h3>
+            <p class="value-text">Practical strategies to establish and grow businesses across APAC, the Middle East and EMEA.</p>
+          </div>
+
+          <div class="value-card">
+            <svg class="value-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="8,36 18,24 26,30 40,12"/>
+              <path d="M32 12h8v8"/>
+            </svg>
+            <h3 class="value-title">Commercial Execution</h3>
+            <p class="value-text">From strategic planning to implementation, ensuring ideas become measurable results.</p>
+          </div>
+
+          <div class="value-card">
+            <svg class="value-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="6" y="20" width="36" height="22" rx="2"/>
+              <rect x="12" y="26" width="8" height="6"/>
+              <rect x="28" y="26" width="8" height="6"/>
+              <path d="M6 20l18-14 18 14"/>
+              <line x1="24" y1="6" x2="24" y2="20"/>
+            </svg>
+            <h3 class="value-title">Infrastructure &amp; Data Centre Expertise</h3>
+            <p class="value-text">Deep sector knowledge supporting mission-critical infrastructure, engineering, and technology organisations.</p>
+          </div>
+
+        </div>
+
+        <p class="support-closing fade-in">
+          Strategy creates direction. Execution creates growth.<br>At Sygnific, we deliver both.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 2 — WHO WE ARE
+         ════════════════════════════════════════════════════ -->
+    <section class="home-who" aria-labelledby="who-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Who We Are</span>
+          <h2 id="who-title">Regional Presence.<br><em class="text-italic">Executive Leadership.</em><br>Sustainable Growth.</h2>
+        </div>
+
+        <div class="who-intro fade-in">
+          <p>International expansion is more than entering a new market. It requires understanding local business cultures, <strong>building trusted relationships</strong>, influencing strategic decisions, and executing with discipline.</p>
+          <p>Sygnific was established to <strong>bridge the gap between corporate strategy and successful market execution</strong>.</p>
+          <p>We partner with business owners, boards, CEOs, and executive leadership teams to accelerate commercial growth, strengthen regional operations, and unlock new market opportunities across <strong>APAC, the Middle East and EMEA</strong>.</p>
+          <p>Unlike conventional consulting firms, we do not simply deliver recommendations and step away. We work alongside our clients <strong>as an extension of their leadership team</strong>, helping transform strategic ambition into measurable commercial outcomes.</p>
+          <p>Our approach combines executive leadership, commercial expertise, regional market knowledge, and practical execution to <strong>reduce the risks associated with international expansion</strong> while accelerating sustainable growth.</p>
+        </div>
+
+        <p class="approach-label fade-in">Our Approach</p>
+
+        <div class="approach-grid fade-in-group">
+
+          <div class="approach-col">
+            <span class="approach-num" aria-hidden="true">01</span>
+            <h3 class="approach-title">Think<br><em>Strategically</em></h3>
+            <p class="approach-text">Every engagement begins with understanding the client's objectives, market position, competitive environment, and long-term vision. We identify opportunities, assess challenges, and define a practical roadmap that aligns commercial ambition with operational reality.</p>
+            <p class="approach-outcome"><span class="approach-outcome-label">Outcome —</span> Clarity</p>
+          </div>
+
+          <div class="approach-col">
+            <span class="approach-num" aria-hidden="true">02</span>
+            <h3 class="approach-title">Execute<br><em>with Discipline</em></h3>
+            <p class="approach-text">Ideas only create value when they are successfully implemented. Sygnific works alongside leadership teams to convert strategy into execution by building relationships, influencing decision-makers, supporting commercial teams, and driving measurable progress.</p>
+            <p class="approach-outcome"><span class="approach-outcome-label">Outcome —</span> Commercial Momentum</p>
+          </div>
+
+          <div class="approach-col">
+            <span class="approach-num" aria-hidden="true">03</span>
+            <h3 class="approach-title">Build Sustainable<br><em>Growth</em></h3>
+            <p class="approach-text">Our focus is never on short-term wins alone. We help clients establish the commercial foundations, partnerships, and regional capabilities required to achieve long-term, scalable success.</p>
+            <p class="approach-outcome"><span class="approach-outcome-label">Outcome —</span> Measurable Growth</p>
+          </div>
+
+        </div>
+
+        <p class="approach-closing fade-in">We remain involved beyond strategy, supporting execution, stakeholder alignment and measurable business outcomes.</p>
+
+        <div class="why-panel fade-in">
+          <h3 class="why-panel-title">Why Organisations Choose Sygnific</h3>
+          <ul class="why-checklist">
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Executive-level leadership with international commercial experience.
+            </li>
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Practical market expansion expertise across multiple regions.
+            </li>
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Strong understanding of complex infrastructure and technology sectors.
+            </li>
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Proven ability to bridge strategy and execution.
+            </li>
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Flexible engagement models aligned with each client's growth objectives.
+            </li>
+            <li class="why-item">
+              <svg class="why-check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>
+              Long-term partnerships built on measurable business outcomes.
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-block fade-in">
+          <span class="cta-block-label" style="color:var(--color-text);">Discover How We Can Support Your Growth</span>
+          <div class="cta-row">
+            <a href="solutions.html" class="btn btn--primary">Explore Our Solutions</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 3 — WHAT WE DO
+         ════════════════════════════════════════════════════ -->
+    <section class="home-what" aria-labelledby="what-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">What We Do</span>
+          <h2 id="what-title" class="heading--light">Executive Capability.<br><em class="text-italic">Commercial Execution.</em><br>International Growth.</h2>
+        </div>
+
+        <div class="section-intro fade-in" style="max-width:760px;">
+          <p class="text--light">Every organisation faces different challenges when expanding into new markets. Some require strategic direction. Others need regional leadership, commercial acceleration, or trusted representation on the ground. Sygnific delivers flexible executive support tailored to each stage of growth, combining strategic advisory with hands-on execution to help organisations achieve sustainable commercial success.</p>
+        </div>
+
+        <div class="cap-grid fade-in-group">
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="6" y="14" width="28" height="20" rx="2"/>
+              <path d="M14 14v-4a6 6 0 0112 0v4"/>
+              <line x1="20" y1="22" x2="20" y2="28"/>
+              <circle cx="20" cy="22" r="2"/>
+            </svg>
+            <h3 class="cap-title">Executive Advisory</h3>
+            <p class="cap-text">We provide strategic guidance to business owners, boards, and executive leadership teams navigating growth, organisational transformation, market expansion, and commercial decision-making. Whether supporting investment decisions, regional strategies, or executive planning, our role is to provide clear direction backed by practical experience and measurable outcomes.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="20" cy="20" r="14"/>
+              <path d="M20 6v28M6 20h28"/>
+              <ellipse cx="20" cy="20" rx="7" ry="14"/>
+              <path d="M8 12c4 3 8 4 12 4s8-1 12-4M8 28c4-3 8-4 12-4s8 1 12 4"/>
+            </svg>
+            <h3 class="cap-title">International Market Expansion</h3>
+            <p class="cap-text">Expanding into a new region requires more than opening an office. We help organisations evaluate opportunities, understand local market dynamics, establish trusted relationships, and develop practical market-entry strategies that minimise risk while accelerating commercial success. From initial planning through execution, we support every stage of regional growth.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="4,32 14,20 22,26 36,8"/>
+              <path d="M28 8h8v8"/>
+              <line x1="4" y1="36" x2="36" y2="36"/>
+            </svg>
+            <h3 class="cap-title">Commercial Growth &amp; Business Development</h3>
+            <p class="cap-text">Growth is built through strong customer relationships, strategic partnerships, and disciplined commercial execution. Sygnific helps clients identify opportunities, develop sales strategies, strengthen channel networks, engage key decision-makers, and create sustainable revenue pipelines across international markets.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M20 8a12 12 0 100 24 12 12 0 000-24z"/>
+              <path d="M20 8v8l6 4"/>
+              <circle cx="20" cy="20" r="3"/>
+            </svg>
+            <h3 class="cap-title">Strategic Representation</h3>
+            <p class="cap-text">For organisations seeking an executive presence without establishing a full regional office, Sygnific can act as a trusted strategic representative. We build relationships, engage customers and partners, support major opportunities, represent executive interests, and provide ongoing commercial leadership aligned with our clients' objectives.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M20 10a6 6 0 100 12 6 6 0 000-12z"/>
+              <path d="M6 36a14 14 0 0128 0"/>
+              <path d="M28 6l4 4-4 4M12 6l-4 4 4 4"/>
+            </svg>
+            <h3 class="cap-title">Interim Executive Leadership</h3>
+            <p class="cap-text">Business transformation often requires experienced leadership during periods of change. Sygnific provides interim executive support for commercial leadership, regional management, market development, and strategic initiatives, bringing immediate experience while maintaining long-term flexibility.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+          <div class="cap-card">
+            <svg class="cap-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="6" y="16" width="28" height="18" rx="1"/>
+              <rect x="10" y="20" width="6" height="4"/>
+              <rect x="24" y="20" width="6" height="4"/>
+              <rect x="10" y="28" width="6" height="4"/>
+              <rect x="24" y="28" width="6" height="4"/>
+              <path d="M6 16l14-10 14 10"/>
+            </svg>
+            <h3 class="cap-title">Infrastructure &amp; Data Centre Advisory</h3>
+            <p class="cap-text">The future of digital infrastructure demands specialised expertise. Drawing on extensive experience in mission-critical environments, we support organisations operating in data centres, engineering, manufacturing, and the built environment with strategic positioning, specification development, commercial growth, and regional business expansion.</p>
+            <a href="solutions.html" class="cap-link">
+              Explore the Solution
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="philosophy-block fade-in">
+          <p>Every engagement is different. Some clients require strategic advice. Others need commercial execution. Many require both.</p>
+          <p>Rather than offering standard consulting packages, Sygnific develops tailored executive partnerships that align with each client's ambitions, organisational structure, and growth objectives.</p>
+          <p>Our success is measured by the commercial success of our clients.</p>
+        </div>
+
+        <div class="cta-block fade-in">
+          <h3 style="font-family:var(--font-heading);font-size:clamp(var(--text-2xl),2.5vw,var(--text-4xl));font-weight:300;color:var(--color-ivory);margin-bottom:var(--space-4);">Let's Discuss Your Growth Strategy</h3>
+          <span class="cta-block-label cta-block-label--light">Whether your organisation is entering a new market, strengthening regional operations, or preparing for its next phase of growth, Sygnific provides the executive capability to help turn strategy into measurable results.</span>
+          <div class="cta-row">
+            <a href="https://koalendar.com/u/enrico-ferri" data-koalendar-widget class="btn btn--primary">Schedule a Strategy Call</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 4 — WHY SYGNIFIC
+         ════════════════════════════════════════════════════ -->
+    <section class="home-why" aria-labelledby="why-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Why Sygnific</span>
+          <h2 id="why-title">More Than Advice.<br><em class="text-italic">A Partner in Execution.</em></h2>
+        </div>
+
+        <div class="why-intro-grid fade-in">
+          <div>
+            <p>Many organisations know where they want to grow. The challenge is knowing how to get there and having the leadership to make it happen. Traditional consulting firms often deliver strategies and recommendations. Building an internal regional team requires significant investment, time, and long-term commitment.</p>
+            <p>Sygnific offers a different approach. We combine executive leadership, regional market expertise, and commercial execution to help organisations accelerate growth with greater flexibility, lower risk, and faster results.</p>
+            <p>Our role is not simply to advise. Our role is to help our clients succeed.</p>
+          </div>
+          <div class="why-accent-block">
+            <p class="why-accent-quote">"We combine executive leadership, regional expertise, and commercial execution."</p>
+            <p class="why-accent-sub">Greater flexibility. Lower risk. Faster results.</p>
+          </div>
+        </div>
+
+        <span class="eyebrow fade-in" style="margin-bottom:var(--space-8);">Why Clients Partner with Sygnific</span>
+
+        <div class="benefit-grid fade-in-group">
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">01</div>
+            <h3 class="benefit-title">Executive-Level Experience</h3>
+            <p class="benefit-text">Every engagement benefits from senior commercial leadership with extensive experience across international markets, complex sales environments, and strategic business development. You work directly with experienced decision-makers, not layers of junior consultants.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">02</div>
+            <h3 class="benefit-title">Strategy Backed by Execution</h3>
+            <p class="benefit-text">A strategy only creates value when it is implemented. Sygnific supports clients beyond planning by engaging stakeholders, developing partnerships, influencing commercial opportunities, and driving execution throughout the growth journey.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">03</div>
+            <h3 class="benefit-title">Regional Expertise</h3>
+            <p class="benefit-text">Understanding a market requires more than research. Success depends on local business culture, trusted relationships, regulatory awareness, and practical commercial experience. Our regional knowledge helps clients enter new markets with confidence and clarity.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">04</div>
+            <h3 class="benefit-title">Flexible Business Model</h3>
+            <p class="benefit-text">Not every organisation requires a permanent regional office or full-time executive. Sygnific provides executive capability that scales with your business objectives, allowing clients to access senior leadership without the fixed cost and complexity of building an internal organisation from day one.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">05</div>
+            <h3 class="benefit-title">Long-Term Partnerships</h3>
+            <p class="benefit-text">We believe sustainable growth is achieved through lasting relationships. Rather than delivering isolated consulting projects, we work alongside our clients over time, adapting to changing priorities, supporting new opportunities, and contributing to long-term commercial success.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-num" aria-hidden="true">06</div>
+            <h3 class="benefit-title">Results That Matter</h3>
+            <p class="benefit-text">Our work is measured by outcomes, not activity. Whether the objective is entering a new market, securing strategic partnerships, strengthening regional operations, or accelerating revenue growth, our focus remains on delivering measurable business value.</p>
+          </div>
+
+        </div>
+
+        <p class="compare-intro fade-in">Most organisations evaluating international growth consider three options.<br>Here is how the approaches differ.</p>
+
+        <div class="compare-wrap fade-in">
+          <h3 class="compare-title">The Sygnific Advantage</h3>
+          <table class="compare-table" aria-label="Comparison: Traditional Consulting vs Sygnific">
+            <thead>
+              <tr>
+                <th scope="col">Traditional Consulting Firm</th>
+                <th scope="col">
+                  <div class="cone-col">
+                    <svg class="compare-cone" viewBox="0 0 220 64" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+                      <defs>
+                        <radialGradient id="coneGrad" cx="50%" cy="0%" r="75%" gradientUnits="objectBoundingBox">
+                          <stop offset="0%"   stop-color="#C9A878" stop-opacity="0.85"/>
+                          <stop offset="45%"  stop-color="#B08D57" stop-opacity="0.35"/>
+                          <stop offset="100%" stop-color="#B08D57" stop-opacity="0"/>
+                        </radialGradient>
+                      </defs>
+                      <!-- cone: point at top-center, spreading to full width at bottom -->
+                      <polygon points="110,0 0,64 220,64" fill="url(#coneGrad)"/>
+                      <!-- bright source dot at tip -->
+                      <circle cx="110" cy="2" r="2.5" fill="#C9A878" opacity="0.9"/>
+                    </svg>
+                    Sygnific
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Delivers reports and recommendations, then steps away</td>
+                <td>Works alongside you through execution and beyond</td>
+              </tr>
+              <tr>
+                <td>Layers of junior consultants managing your account</td>
+                <td>Direct access to senior executives at every stage</td>
+              </tr>
+              <tr>
+                <td>Fixed, generic engagement packages</td>
+                <td>Flexible models tailored to your objectives and structure</td>
+              </tr>
+              <tr>
+                <td>Short-term project focus with defined end dates</td>
+                <td>Long-term partnership built on measurable commercial outcomes</td>
+              </tr>
+              <tr>
+                <td>Advises from the outside without accountability for results</td>
+                <td>Embedded as a trusted extension of your leadership team</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="commitment-intro fade-in">
+          <span class="eyebrow">Our Commitment</span>
+          <p style="color:var(--color-text);font-size:var(--text-base);line-height:1.8;max-width:none;">Every client engagement is built on four principles:</p>
+        </div>
+
+        <div class="commitment-grid fade-in-group">
+          <div class="commitment-item">
+            <div class="commitment-word">Clarity</div>
+            <p class="commitment-def">Define objectives with precision.</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-word">Integrity</div>
+            <p class="commitment-def">Act as a trusted extension of your leadership team.</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-word">Execution</div>
+            <p class="commitment-def">Turn strategy into measurable action.</p>
+          </div>
+          <div class="commitment-item">
+            <div class="commitment-word">Growth</div>
+            <p class="commitment-def">Build sustainable commercial success over the long term.</p>
+          </div>
+        </div>
+
+        <div class="cta-block fade-in">
+          <h3 style="font-family:var(--font-heading);font-size:clamp(var(--text-2xl),2.5vw,var(--text-4xl));font-weight:300;color:var(--color-navy);margin-bottom:var(--space-4);">Build Your Next Phase of Growth with Confidence</h3>
+          <span class="cta-block-label">Whether you are exploring new markets, strengthening regional operations, or accelerating commercial performance, Sygnific is ready to become your trusted executive growth partner.</span>
+          <div class="cta-row">
+            <a href="https://koalendar.com/u/enrico-ferri" data-koalendar-widget class="btn btn--primary">Begin a Partnership</a>
+            <a href="contact.html#contact-form" class="btn btn--ghost-dark">Contact Sygnific</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 5 — INDUSTRIES WE SERVE
+         ════════════════════════════════════════════════════ -->
+    <section class="home-industries" aria-labelledby="ind-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Industries We Serve</span>
+          <h2 id="ind-title" class="heading--light">Where Industry Expertise<br><em class="text-italic">Becomes Commercial Advantage.</em></h2>
+        </div>
+
+        <div class="section-intro fade-in">
+          <p class="text--light">Every industry has its own commercial dynamics, decision-making processes, and route to market. Sygnific focuses on sectors where strategic relationships, technical understanding, and executive leadership create measurable competitive advantage. We work with organisations seeking sustainable growth in complex, high-value markets where commercial success depends on more than products alone.</p>
+        </div>
+
+        <!-- Dubai | Singapore geo strip -->
+        <div class="geo-strip fade-in">
+
+          <div class="geo-strip-panel">
+            <img
+              src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=960&q=80&auto=format&fit=crop"
+              alt="Dubai — United Arab Emirates"
+              loading="lazy"
+              width="960"
+              height="640"
+            >
+            <div class="geo-strip-overlay"></div>
+            <div class="geo-strip-label">
+              <span class="geo-strip-city">Dubai</span>
+              <span class="geo-strip-tag">UAE</span>
+            </div>
+          </div>
+
+          <div class="geo-strip-panel">
+            <img
+              src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=960&q=80&auto=format&fit=crop"
+              alt="Singapore"
+              loading="lazy"
+              width="960"
+              height="640"
+              style="object-position: center 30%;"
+            >
+            <div class="geo-strip-overlay"></div>
+            <div class="geo-strip-label">
+              <span class="geo-strip-city">Singapore</span>
+              <span class="geo-strip-tag">APAC Hub</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="industry-grid fade-in-group">
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="4" y="12" width="32" height="20" rx="2"/>
+              <rect x="8" y="16" width="4" height="3"/>
+              <rect x="16" y="16" width="4" height="3"/>
+              <rect x="24" y="16" width="4" height="3"/>
+              <rect x="8" y="23" width="4" height="3"/>
+              <rect x="16" y="23" width="4" height="3"/>
+              <rect x="24" y="23" width="4" height="3"/>
+              <path d="M4 32v4M36 32v4M12 8h16"/>
+            </svg>
+            <h3 class="industry-title">Data Centres &amp; Digital Infrastructure</h3>
+            <p class="industry-text">Artificial intelligence, cloud computing, and digital transformation are reshaping global infrastructure at unprecedented speed. Sygnific supports organisations across the data centre ecosystem by strengthening market positioning, developing specification strategies, building strategic relationships, and accelerating regional business development.</p>
+          </div>
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M6 36V16l14-10 14 10v20"/>
+              <rect x="15" y="24" width="10" height="12"/>
+              <path d="M10 20h4M26 20h4M10 28h4M26 28h4"/>
+              <path d="M18 10l2-4 2 4"/>
+            </svg>
+            <h3 class="industry-title">Building Technologies</h3>
+            <p class="industry-text">Buildings are becoming smarter, more sustainable, and increasingly integrated. We support manufacturers, technology providers, and solution partners in expanding market presence, developing specification opportunities, and creating long-term commercial growth across regional markets.</p>
+          </div>
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="4" y="24" width="12" height="12"/>
+              <rect x="14" y="16" width="12" height="20"/>
+              <rect x="24" y="20" width="12" height="16"/>
+              <path d="M4 24l8-16 8 8 8-12 8 4"/>
+            </svg>
+            <h3 class="industry-title">Engineering &amp; Manufacturing</h3>
+            <p class="industry-text">Technical excellence alone is rarely enough to achieve international success. Sygnific helps engineering and manufacturing businesses translate innovation into commercial opportunity through strategic partnerships, market expansion, and executive representation.</p>
+          </div>
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M8 36V8l4-4h16l4 4v28"/>
+              <rect x="14" y="20" width="12" height="16"/>
+              <path d="M4 36h32"/>
+              <path d="M16 14h8M16 18h8"/>
+            </svg>
+            <h3 class="industry-title">Infrastructure</h3>
+            <p class="industry-text">Large infrastructure projects require collaboration across developers, consultants, contractors, operators, and government stakeholders. Our understanding of complex project environments enables clients to position themselves earlier in the decision-making process and build stronger regional relationships.</p>
+          </div>
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="20" cy="20" r="14"/>
+              <circle cx="20" cy="20" r="6"/>
+              <path d="M20 6v4M20 30v4M6 20h4M30 20h4"/>
+              <path d="M10 10l3 3M27 27l3 3M10 30l3-3M27 13l3-3"/>
+            </svg>
+            <h3 class="industry-title">Smart Cities &amp; Sustainable Development</h3>
+            <p class="industry-text">Urbanisation, digital technologies, and sustainability continue to reshape the built environment. Sygnific works with organisations delivering innovative solutions that contribute to smarter, more efficient, and more resilient cities.</p>
+          </div>
+
+          <div class="industry-card">
+            <svg class="industry-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="6,30 14,18 20,24 28,12 36,18"/>
+              <circle cx="36" cy="18" r="3"/>
+              <path d="M4 36h32"/>
+            </svg>
+            <h3 class="industry-title">Emerging Growth Sectors</h3>
+            <p class="industry-text">While infrastructure remains a core strength, Sygnific's executive advisory model is designed to support organisations across a broad range of industries where international expansion, commercial transformation, and regional leadership are critical to success.</p>
+          </div>
+
+        </div>
+
+        <div class="industry-split fade-in">
+
+          <div class="value-list-block">
+            <h3>How We Create Value Across Industries</h3>
+            <p style="color:rgba(247,245,241,0.55);font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--space-5);">Regardless of sector, every engagement is built around the same objectives:</p>
+            <ul class="value-list">
+              <li class="value-list-item">Accelerate international growth.</li>
+              <li class="value-list-item">Strengthen commercial performance.</li>
+              <li class="value-list-item">Develop strategic partnerships.</li>
+              <li class="value-list-item">Expand regional presence.</li>
+              <li class="value-list-item">Improve market positioning.</li>
+              <li class="value-list-item">Support long-term business success.</li>
+            </ul>
+          </div>
+
+          <div class="geo-block">
+            <h3>Geographic Focus</h3>
+            <p style="color:rgba(247,245,241,0.55);font-size:var(--text-sm);line-height:1.7;margin-bottom:var(--space-6);">Sygnific currently supports organisations with growth ambitions across:</p>
+            <div class="geo-region">
+              <div class="geo-region-label">APAC</div>
+              <div class="geo-region-countries">Singapore, Malaysia, Indonesia, Thailand, Vietnam, Philippines, South Korea, Japan, Australia, New Zealand</div>
+            </div>
+            <div class="geo-region">
+              <div class="geo-region-label">Middle East</div>
+              <div class="geo-region-countries">United Arab Emirates, Saudi Arabia, Kuwait, Qatar, Oman</div>
+            </div>
+            <div class="geo-region">
+              <div class="geo-region-label">EMEA</div>
+              <div class="geo-region-countries">Supporting selected regional growth initiatives through strategic partnerships and executive advisory.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="industry-closing fade-in">
+          Every market is different.<br>Every industry is evolving.<br>Success belongs to organisations that combine technical excellence with strategic execution.
+        </p>
+
+        <div class="cta-block fade-in">
+          <h3 style="font-family:var(--font-heading);font-size:clamp(var(--text-2xl),2.5vw,var(--text-4xl));font-weight:300;color:var(--color-ivory);margin-bottom:var(--space-4);">Looking for Growth in Complex Markets?</h3>
+          <span class="cta-block-label cta-block-label--light">Let's explore how Sygnific can help your organisation expand into new regions, strengthen commercial performance, and build long-term competitive advantage.</span>
+          <div class="cta-row">
+            <a href="industries.html" class="btn btn--primary">Explore Our Industry Expertise</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 6 — LEADERSHIP (condensed)
+         ════════════════════════════════════════════════════ -->
+    <section class="home-leadership" aria-labelledby="lead-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Leadership</span>
+          <h2 id="lead-title">Senior Leadership.<br><em class="text-italic">Every Engagement.</em></h2>
+          <p style="margin-top:var(--space-6);font-size:var(--text-base);line-height:1.85;color:var(--color-text-light);max-width:680px;">Sygnific was founded on a simple principle: clients deserve direct access to experienced leadership. Every engagement is led by senior executives with real-world commercial experience, international market knowledge, and a proven ability to transform strategy into measurable business outcomes. No layers of junior consultants.</p>
+        </div>
+
+        <div class="leadership-grid fade-in">
+
+          <div class="leader-photo">
+            <img src="assets/images/enrico-ferri.jpg" alt="Enrico Ferri — Founder &amp; Managing Director, Sygnific" class="leader-img" width="480" height="560">
+            <div class="leader-caption">
+              <div class="leader-name">Enrico Ferri</div>
+              <div class="leader-role">Founder &amp; Managing Director</div>
+            </div>
+          </div>
+
+          <div class="leader-bio">
+            <p class="leader-highlight">20+ years of international executive leadership across APAC, the Middle East and EMEA.</p>
+            <p style="color:var(--color-text);font-size:var(--text-base);line-height:1.9;">Enrico Ferri is an international executive with more than two decades of experience leading commercial growth, market expansion, and strategic business development across Europe, the Middle East, and the Asia-Pacific region.</p>
+            <p style="color:var(--color-text);font-size:var(--text-base);line-height:1.9;">His career spans senior leadership positions across multiple industries and international markets, where he has built commercial organisations, developed strategic partnerships, and helped businesses successfully expand into complex new regions.</p>
+            <p style="color:var(--color-text);font-size:var(--text-base);line-height:1.9;">Sygnific was established to provide ambitious organisations with direct access to that executive experience, enabling businesses to accelerate international growth without the cost and complexity of building full regional teams from day one.</p>
+
+            <div style="margin-top:var(--space-10);display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-4);">
+              <a href="leadership.html" class="btn btn--primary">Meet the Leadership Behind Sygnific</a>
+              <a href="https://www.linkedin.com/company/sygnific-global/" class="leader-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Connect with Enrico Ferri on LinkedIn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 7 — INSIGHTS (condensed)
+         ════════════════════════════════════════════════════ -->
+    <section class="home-insights" aria-labelledby="ins-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Insights</span>
+          <h2 id="ins-title">Executive Perspectives<br><em class="text-italic">for Better Decisions.</em></h2>
+          <p style="margin-top:var(--space-6);font-size:var(--text-base);line-height:1.85;color:var(--color-text);max-width:620px;">Markets evolve. Technology advances. Customer expectations shift. At Sygnific, we believe thought leadership should do more than inform. It should help leaders make better strategic decisions.</p>
+        </div>
+
+        <div class="insights-grid fade-in-group">
+
+          <a href="insights.html" class="insight-card insight-card--featured">
+            <div class="insight-img">
+              <div class="insight-img-placeholder" style="background:linear-gradient(135deg,#0B1B2B 0%,#1A3A5C 100%);">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="4" y="10" width="32" height="24" rx="2"/>
+                  <path d="M4 16h32M10 22h8M10 27h12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-tag">Data Centres &amp; Digital Infrastructure</div>
+              <h3 class="insight-title">The Infrastructure Constraint</h3>
+              <p class="insight-excerpt">How artificial intelligence is reshaping the physical infrastructure behind digital transformation—and why future competitiveness depends on decisions made long before the first server is installed.</p>
+              <span class="insight-read-more">
+                Read More
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="insights.html" class="insight-card">
+            <div class="insight-img">
+              <div class="insight-img-placeholder" style="background:linear-gradient(135deg,#10202F 0%,#1A2E42 100%);">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <polyline points="4,30 12,20 20,24 30,10 36,16"/>
+                  <path d="M30 10h6v6"/>
+                </svg>
+              </div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-tag">Executive Leadership</div>
+              <h3 class="insight-title">From Strategy to Execution</h3>
+              <p class="insight-excerpt">Why successful international expansion requires more than a market-entry plan—and how executive leadership bridges the gap between ambition and measurable results.</p>
+              <span class="insight-read-more">
+                Read More
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="insights.html" class="insight-card">
+            <div class="insight-img">
+              <div class="insight-img-placeholder" style="background:linear-gradient(135deg,#071219 0%,#0D1E2D 100%);">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="6" y="14" width="28" height="18" rx="2"/>
+                  <path d="M6 14l14-8 14 8"/>
+                  <line x1="14" y1="22" x2="14" y2="28"/>
+                  <line x1="20" y1="20" x2="20" y2="28"/>
+                  <line x1="26" y1="18" x2="26" y2="28"/>
+                </svg>
+              </div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-tag">Data Centres &amp; Digital Infrastructure</div>
+              <h3 class="insight-title">The Future of Data Centre Growth</h3>
+              <p class="insight-excerpt">Examining how energy, sustainability, AI, and infrastructure are transforming one of the world's fastest-growing industries.</p>
+              <span class="insight-read-more">
+                Read More
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+            </div>
+          </a>
+
+          <a href="insights.html" class="insight-card">
+            <div class="insight-img">
+              <div class="insight-img-placeholder" style="background:linear-gradient(135deg,#0B1B2B 0%,#1A2E42 100%);">
+                <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="20" cy="14" r="8"/>
+                  <path d="M8 36c0-6.627 5.373-12 12-12s12 5.373 12 12"/>
+                  <path d="M28 8l4 4-4 4"/>
+                </svg>
+              </div>
+            </div>
+            <div class="insight-body">
+              <div class="insight-tag">Executive Leadership</div>
+              <h3 class="insight-title">Executive Perspective</h3>
+              <p class="insight-excerpt">Commercial leadership, regional growth, strategic partnerships, and practical lessons from building businesses across international markets.</p>
+              <span class="insight-read-more">
+                Read More
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 6h8M6 2l4 4-4 4"/></svg>
+              </span>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="cta-block fade-in">
+          <span class="cta-block-label" style="color:var(--color-text);">Discover practical perspectives on international growth, executive leadership, infrastructure, and commercial strategy.</span>
+          <div class="cta-row">
+            <a href="insights.html" class="btn btn--primary">Access the Insights Centre</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════
+         SECTION 8 — START THE CONVERSATION
+         ════════════════════════════════════════════════════ -->
+    <section class="home-contact" aria-labelledby="contact-title">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Start the Conversation</span>
+          <h2 id="contact-title" class="heading--light">Growth Starts<br><em class="text-italic">with Clarity.</em></h2>
+        </div>
+
+        <div class="contact-grid fade-in">
+
+          <!-- Left: message + process + list -->
+          <div>
+            <p class="contact-lead">Tell us where your organisation wants to grow and what is standing in the way of execution.</p>
+            <p class="contact-intro">Whether you are evaluating a new market, accelerating commercial growth, strengthening regional operations, or exploring strategic opportunities, the first step is understanding where you are today and where you want to be tomorrow. At Sygnific, we believe meaningful partnerships begin with open discussion, careful listening, and a clear understanding of your objectives before any recommendations are made. There is no standard solution. Only the solution that best supports your business.</p>
+
+            <h3 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:300;color:var(--color-ivory);margin-bottom:var(--space-8);">How We Work</h3>
+
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-num" aria-hidden="true">1</div>
+                <div class="step-body">
+                  <div class="step-title">Initial Conversation</div>
+                  <p class="step-text">A confidential discussion to understand your organisation, objectives, opportunities, and challenges.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num" aria-hidden="true">2</div>
+                <div class="step-body">
+                  <div class="step-title">Strategic Assessment</div>
+                  <p class="step-text">We evaluate your current position, regional ambitions, commercial priorities, and potential pathways for growth.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num" aria-hidden="true">3</div>
+                <div class="step-body">
+                  <div class="step-title">Recommended Engagement</div>
+                  <p class="step-text">If we believe Sygnific can add value, we will recommend an engagement model tailored to your objectives, whether through executive advisory, strategic representation, commercial leadership, or market expansion support.</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <!-- Right: form + contact info -->
+          <div>
+            <div class="contact-form-wrap">
+              <h3 style="font-family:var(--font-heading);font-size:var(--text-2xl);font-weight:300;color:var(--color-ivory);margin-bottom:var(--space-8);">Begin a Partnership</h3>
+
+              <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate aria-label="Contact form">
+                <input type="hidden" name="access_key" value="29145dfd-d4a2-4b9c-abc9-3a35935a3e49">
+                <input type="hidden" name="subject" value="New Enquiry — Sygnific (Home)">
+                <input type="hidden" name="from_name" value="Sygnific Website">
+                <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name <span aria-label="required">*</span></label>
+                  <input class="form-input" type="text" id="contact-name" name="name" placeholder="Your name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address <span aria-label="required">*</span></label>
+                  <input class="form-input" type="email" id="contact-email" name="email" placeholder="your@company.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-company">Organisation</label>
+                  <input class="form-input" type="text" id="contact-company" name="company" placeholder="Your organisation" autocomplete="organization">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-message">How Can We Help? <span aria-label="required">*</span></label>
+                  <textarea class="form-textarea" id="contact-message" name="message" placeholder="Tell us about your growth objectives and how Sygnific might support them..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Book a Confidential Strategy Call</button>
+                <div class="form-success" hidden role="alert">Thank you. We will be in touch shortly.</div>
+                <div class="form-error" hidden role="alert">Something went wrong. Please email us directly at info@sygnific.global</div>
+              </form>
+
+              <div class="contact-info">
+                <div class="contact-info-item">
+                  <span class="contact-info-label">Head Office</span>
+                  <span class="contact-info-value">Sygnific FZ-LLC, Compass Building,<br>Al Hamra Industrial Zone-FZ,<br>Ras Al Khaimah, United Arab Emirates</span>
+                </div>
+                <div class="contact-info-item">
+                  <span class="contact-info-label">Regional Presence</span>
+                  <span class="contact-info-value">Singapore — Supporting clients across APAC.</span>
+                </div>
+                <div class="contact-info-item">
+                  <span class="contact-info-label">Email</span>
+                  <span class="contact-info-value"><a href="mailto:info@sygnific.global">info@sygnific.global</a></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="contact-closing fade-in">
+          <p>Growth is rarely the result of chance.<br>It is the outcome of informed decisions, trusted partnerships,<br>and disciplined execution.<br>We look forward to helping you build what comes next.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo-pair" style="margin-bottom:var(--space-5);">
+            <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img logo-img--invert">
+              </div>
+            </a>
+            <span class="logo-pair-sep logo-pair-sep--invert"></span>
+            <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img logo-img--invert">
+              </div>
+            </a>
+          </div>
+          <p class="footer-tagline">Executive Growth &amp; Market Expansion Partner</p>
+          <p class="footer-desc">Helping organisations expand internationally through executive leadership, strategic partnerships and commercial execution.</p>
+          <span class="footer-subtag">Driving Growth Across APAC, EMEA &amp; Beyond</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <nav aria-label="Footer company links">
+            <ul class="footer-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="solutions.html">Solutions</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="leadership.html">Leadership</a></li>
+              <li><a href="insights.html">Insights</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <nav aria-label="Footer legal links">
+            <ul class="footer-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address class="footer-address" style="font-style:normal;">
+            Sygnific FZ-LLC<br>
+            MBAM0485, Compass Building<br>
+            Al Shohada Road, Al Hamra Industrial Zone-FZ<br>
+            Ras Al Khaimah, United Arab Emirates
+          </address>
+          <a href="mailto:info@sygnific.global" class="footer-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            info@sygnific.global
+          </a>
+          <a href="https://www.linkedin.com/company/sygnific-global/" class="footer-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Sygnific on LinkedIn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">&copy; <span class="footer-year"></span> Sygnific FZ-LLC. All rights reserved.</span>
+        <nav class="footer-legal-inline" aria-label="Footer legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </nav>
+        <span class="footer-credit">Designed by <a href="https://www.mayordigital.com/en" target="_blank" rel="noopener noreferrer">Mayordigital</a> &mdash; Strategic Partner</span>
+      </div>
+
+    </div>
   </footer>
 
-</div>
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="2,9 7,4 12,9"/>
+    </svg>
+  </button>
 
-<script>
-  const slides   = document.querySelectorAll('.slide');
-  const dots     = document.querySelectorAll('.dot');
-  const progress = document.getElementById('progress');
-  const curEl    = document.getElementById('cur');
-  const INTERVAL = 6000;
+  <script src="js/main.js" defer></script>
 
-  let current = 0, timer, raf, t0;
-  const pad = n => String(n + 1).padStart(2, '0');
-
-  function goTo(idx) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = ((idx % slides.length) + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current].classList.add('active');
-    curEl.textContent = pad(current);
-    startProgress();
-  }
-
-  function startProgress() {
-    cancelAnimationFrame(raf);
-    progress.style.width = '0%';
-    t0 = performance.now();
-    (function tick(now) {
-      const pct = Math.min((now - t0) / INTERVAL * 100, 100);
-      progress.style.width = pct + '%';
-      if (pct < 100) raf = requestAnimationFrame(tick);
-    })(t0);
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), INTERVAL);
-  }
-
-  dots.forEach(d => d.addEventListener('click', () => {
-    goTo(+d.dataset.i); resetTimer();
-  }));
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowRight') { goTo(current + 1); resetTimer(); }
-    if (e.key === 'ArrowLeft')  { goTo(current - 1); resetTimer(); }
-  });
-
-  let tx = 0;
-  document.addEventListener('touchstart', e => tx = e.changedTouches[0].screenX, { passive: true });
-  document.addEventListener('touchend', e => {
-    const dx = tx - e.changedTouches[0].screenX;
-    if (Math.abs(dx) > 40) { goTo(current + (dx > 0 ? 1 : -1)); resetTimer(); }
-  }, { passive: true });
-
-  startProgress();
-  resetTimer();
-</script>
-
+  <script>
+    window.Koalendar = window.Koalendar || function () { (Koalendar.props = Koalendar.props || []).push(arguments); };
+  </script>
+  <script async src="https://koalendar.com/assets/widget.js"></script>
+  <script>Koalendar('init');</script>
 </body>
 </html>

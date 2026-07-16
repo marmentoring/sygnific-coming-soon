@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Solutions | Executive Advisory, Market Expansion &amp; Commercial Growth — Sygnific</title>
+  <meta name="description" content="Explore Sygnific's executive solutions: advisory, international market expansion, commercial growth, strategic representation, interim leadership and infrastructure advisory across APAC, EMEA and the Middle East.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Solutions | Executive Advisory, Market Expansion &amp; Commercial Growth — Sygnific">
+  <meta property="og:description" content="Explore Sygnific's executive solutions: advisory, international market expansion, commercial growth, strategic representation, interim leadership and infrastructure advisory across APAC, EMEA and the Middle East.">
+  <meta property="og:url"         content="https://sygnific.global/solutions">
+  <meta property="og:image"       content="https://sygnific.global/assets/images/og-solutions.jpg">
+
+  <link rel="canonical" href="https://sygnific.global/solutions">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* ══ SOLUTIONS PAGE ════════════════════════════════════════ */
+
+    /* ── HERO ──────────────────────────────────────────────── */
+
+    .sol-hero {
+      background:
+        radial-gradient(ellipse at 18% 55%, rgba(11, 47, 90, 0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 25%, rgba(176, 141, 87, 0.07) 0%, transparent 45%),
+        linear-gradient(140deg, #071219 0%, #0D1E2D 45%, #0B1B2B 100%);
+      padding-top: calc(var(--header-height) + var(--space-20));
+      padding-bottom: var(--space-20);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sol-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(176, 141, 87, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 141, 87, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+
+    .sol-hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .sol-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-4xl), 5.5vw, var(--text-7xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-8);
+    }
+
+    .sol-hero h1.fade-in        { transition-delay: 80ms; }
+    .sol-hero-sub.fade-in       { transition-delay: 260ms; }
+
+    .sol-hero-sub {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: rgba(247, 245, 241, 0.55);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+
+    /* ── INTRO ──────────────────────────────────────────────── */
+
+    .sol-intro {
+      background: var(--color-white);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sol-intro::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .sol-intro .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sol-intro-body {
+      font-size: var(--text-lg);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text);
+      max-width: 800px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .sol-intro-close {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-light);
+      font-style: italic;
+      max-width: 640px;
+      margin-inline: auto;
+      text-align: center;
+      margin-top: var(--space-8);
+    }
+
+    /* ── ZIG-ZAG SOLUTION BLOCKS ───────────────────────────── */
+
+    .sol-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 560px;
+    }
+
+    /* ── TEXT PANEL ─────────────────────────────────────────── */
+
+    .sol-text {
+      padding: var(--space-20) var(--space-16);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* All panels: start white, transition to navy on scroll.
+       Text is always ivory — becomes visible as the background darkens. */
+    .sol-text--white,
+    .sol-text--ivory,
+    .sol-text--navy {
+      background: var(--color-white);
+      transition: background-color 800ms var(--ease-out);
+    }
+
+    /* Cancel global fade-in opacity/transform — background-color does the reveal */
+    .sol-text.fade-in {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: background-color 800ms var(--ease-out);
+    }
+
+    /* Scroll trigger: panel becomes navy */
+    .sol-text.is-visible {
+      background-color: var(--color-navy);
+    }
+
+    /* Inner content wrapper — structural only, no z-index */
+    .sol-text-inner {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Decorative oversized number — bottom right so it never clashes with headlines */
+    .sol-num {
+      font-family: var(--font-heading);
+      font-size: clamp(5rem, 10vw, 9rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1;
+      color: rgba(176, 141, 87, 0.12);
+      letter-spacing: -0.03em;
+      position: absolute;
+      bottom: var(--space-6);
+      right: var(--space-8);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Eyebrow */
+    .sol-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    /* Headline — cap at text-4xl so long titles (card 6) don't overflow the panel */
+    .sol-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2.4vw, var(--text-4xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-3);
+    }
+
+    /* Subtitle */
+    .sol-subtitle {
+      font-size: var(--text-base);
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(247, 245, 241, 0.5);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Gold rule */
+    .sol-rule {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--color-gold);
+      margin-bottom: var(--space-6);
+      flex-shrink: 0;
+    }
+
+    /* Use .sol-text as ancestor to beat global  p { color: var(--color-text) } */
+    .sol-text .sol-desc {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: rgba(247, 245, 241, 0.72);
+      margin-bottom: var(--space-8);
+      max-width: 100%;
+    }
+
+    /* Engagements label */
+    .sol-text .sol-eng-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.3);
+      margin-bottom: var(--space-4);
+    }
+
+    /* Engagement bullet list */
+    .sol-engagements {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .sol-text .sol-engagements li {
+      font-size: var(--text-sm);
+      color: rgba(247, 245, 241, 0.55);
+      line-height: var(--leading-snug);
+      padding-left: var(--space-5);
+      position: relative;
+    }
+
+    .sol-engagements li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--color-gold);
+    }
+
+    /* ── IMAGE PANEL ────────────────────────────────────────── */
+
+    .sol-image {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--color-navy-mid);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .sol-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 27, 43, 0.32);
+      transition: background var(--transition-slow);
+    }
+
+    .sol-block:hover .sol-image::after {
+      background: rgba(11, 27, 43, 0.18);
+    }
+
+    /* Reversed: image on the left */
+    .sol-block--reversed .sol-image { order: -1; }
+
+    /* ── ENGAGEMENT MODELS ─────────────────────────────────── */
+
+    .sol-models {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sol-models::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .sol-models .container { position: relative; z-index: 1; }
+
+    .sol-models-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-4);
+      margin-top: var(--space-12);
+    }
+
+    .sol-model-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-ivory-dark);
+      padding: var(--space-10) var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition:
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        transform var(--transition-base);
+    }
+
+    .sol-model-card:hover {
+      border-color: rgba(176, 141, 87, 0.35);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .sol-model-num {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(176, 141, 87, 0.4);
+      line-height: 1;
+    }
+
+    .sol-model-name {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      color: var(--color-navy);
+      line-height: var(--leading-snug);
+    }
+
+    .sol-model-desc {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-light);
+      max-width: 100%;
+    }
+
+    /* ── INDUSTRIES SUPPORTED ──────────────────────────────── */
+
+    .sol-industries {
+      background: var(--color-navy);
+      padding-block: var(--space-20);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sol-industries::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+
+    .sol-industries .container { position: relative; z-index: 1; }
+
+    .sol-industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+    }
+
+    .sol-industry-tag {
+      display: inline-flex;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.65);
+      border: 1px solid rgba(176, 141, 87, 0.22);
+      padding: var(--space-3) var(--space-5);
+      text-decoration: none;
+      transition:
+        color var(--transition-base),
+        border-color var(--transition-base),
+        background var(--transition-base);
+    }
+
+    .sol-industry-tag:hover {
+      color: var(--color-ivory);
+      border-color: var(--color-gold);
+      background: rgba(176, 141, 87, 0.1);
+    }
+
+    /* ── WHY CLIENTS CHOOSE SYGNIFIC ───────────────────────── */
+
+    .sol-why {
+      background: var(--color-white);
+      padding-block: var(--space-24);
+    }
+
+    .sol-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 var(--space-16);
+      margin-top: var(--space-12);
+    }
+
+    .sol-why-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--color-ivory-dark);
+    }
+
+    .sol-why-check {
+      flex-shrink: 0;
+      color: var(--color-gold);
+    }
+
+    .sol-why-text {
+      font-size: var(--text-base);
+      font-weight: 500;
+      color: var(--color-navy);
+      line-height: var(--leading-snug);
+    }
+
+    /* ── AUDIENCE TAGS ─────────────────────────────────────── */
+
+    .sol-audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      margin-bottom: var(--space-12);
+    }
+
+    .sol-audience-tag {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      border: 1px solid var(--color-ivory-dark);
+      padding: var(--space-2) var(--space-5);
+    }
+
+    /* ── CTA ────────────────────────────────────────────────── */
+
+    .sol-cta {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sol-cta .container { position: relative; z-index: 1; }
+
+    .sol-cta-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+      font-weight: 300;
+      color: var(--color-navy);
+      margin-bottom: var(--space-6);
+      line-height: var(--leading-tight);
+    }
+
+    .sol-cta-sub {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-light);
+      max-width: 640px;
+      margin: 0 auto var(--space-10);
+    }
+
+    .sol-cta-btns {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── PER-SOLUTION CTA LINK ─────────────────────────────── */
+
+    .sol-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-top: var(--space-8);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+
+    .sol-text-link:hover {
+      color: var(--color-ivory);
+    }
+
+    .sol-text-link svg {
+      flex-shrink: 0;
+      transition: transform var(--transition-base);
+    }
+
+    .sol-text-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* Who It Is For label */
+    .sol-who-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.3);
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-2);
+    }
+
+    .sol-who-text {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: rgba(247, 245, 241, 0.55);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+
+    @media (max-width: 1280px) {
+      .sol-text { padding: var(--space-16) var(--space-12); }
+    }
+
+    @media (max-width: 1024px) {
+      .sol-text { padding: var(--space-16) var(--space-10); }
+      .sol-models-grid { grid-template-columns: repeat(2, 1fr); }
+      .sol-models { padding-block: var(--space-20); }
+    }
+
+    @media (max-width: 768px) {
+      /* Slow down the colour reveal on mobile so it's visible while scrolling */
+      .sol-text--white,
+      .sol-text--ivory,
+      .sol-text--navy,
+      .sol-text.fade-in {
+        transition: background-color 1400ms var(--ease-out);
+      }
+
+      .sol-block {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .sol-block--reversed .sol-image { order: 0; }
+      .sol-image { min-height: 280px; }
+      .sol-text { padding: var(--space-12) var(--space-5); }
+
+      .sol-num {
+        font-size: 4rem;
+        top: var(--space-4);
+        right: var(--space-5);
+      }
+
+      .sol-models-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+      .sol-why-grid { grid-template-columns: 1fr; gap: 0; }
+
+      .sol-hero h1 { font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl)); }
+      .sol-intro { padding-block: var(--space-16); }
+      .sol-why { padding-block: var(--space-16); }
+      .sol-cta { padding-block: var(--space-16); }
+      .sol-industries { padding-block: var(--space-16); }
+    }
+
+    @media (max-width: 480px) {
+      .sol-text { padding: var(--space-10) var(--space-4); }
+      .sol-image { min-height: 220px; }
+      .sol-models { padding-block: var(--space-16); }
+      .sol-model-card { padding: var(--space-8) var(--space-6); }
+      .sol-cta-btns { flex-direction: column; align-items: center; }
+      .sol-cta-btns .btn { width: 100%; }
+      .sol-intro-body { font-size: var(--text-base); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header class="site-header site-header--light" role="banner">
+    <div class="header-inner">
+
+      <div class="logo-pair">
+        <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img">
+          </div>
+        </a>
+        <span class="logo-pair-sep"></span>
+        <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img">
+          </div>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/"               class="nav-link">Home</a>
+        <a href="about.html"      class="nav-link">About</a>
+        <a href="solutions.html"  class="nav-link" aria-current="page">Solutions</a>
+        <a href="industries.html" class="nav-link">Industries</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="insights.html"   class="nav-link">Insights</a>
+        <a href="contact.html"    class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="contact.html#contact-form" class="btn btn--secondary btn--sm">Begin a Partnership</a>
+      </div>
+
+      <button
+        class="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        style="--hamburger-color: var(--color-navy);"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ── MOBILE NAV ─────────────────────────────────────────── -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="4" x2="20" y2="20"/>
+        <line x1="20" y1="4" x2="4" y2="20"/>
+      </svg>
+    </button>
+    <a href="/"               class="nav-link">Home</a>
+    <a href="about.html"      class="nav-link">About</a>
+    <a href="solutions.html"  class="nav-link" aria-current="page">Solutions</a>
+    <a href="industries.html" class="nav-link">Industries</a>
+    <a href="leadership.html" class="nav-link">Leadership</a>
+    <a href="insights.html"   class="nav-link">Insights</a>
+    <a href="contact.html"    class="nav-link">Contact</a>
+    <div class="mobile-nav-footer">sygnific.global</div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
+    <section class="sol-hero">
+      <div class="container">
+        <h1>
+          <span class="hero-ln"><span class="hero-ln-inner">Executive Capability.</span></span>
+          <span class="hero-ln"><span class="hero-ln-inner">Commercial Execution.</span></span>
+          <span class="hero-ln"><span class="hero-ln-inner"><em class="text-italic" style="color:var(--color-gold);">Measurable Growth.</em></span></span>
+        </h1>
+        <p class="sol-hero-sub hero-sub-anim">Solutions designed around the strategic priorities, commercial realities and growth ambitions of your organisation.</p>
+      </div>
+    </section>
+
+
+    <!-- ══ INTRO ══════════════════════════════════════════════ -->
+    <section class="sol-intro" aria-labelledby="intro-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered fade-in">
+          <span class="eyebrow">What We Do</span>
+          <h2 id="intro-heading" style="font-size:clamp(var(--text-2xl),4vw,var(--text-5xl));margin-inline:auto;">Your objectives define the engagement.</h2>
+        </div>
+
+        <p class="sol-intro-body fade-in">Every organisation faces unique challenges. Some are entering new markets for the first time. Others are accelerating regional growth, transforming commercial operations, or strengthening executive leadership. Sygnific provides flexible executive support tailored to each client's objectives, combining strategic insight with practical execution to create measurable business outcomes.</p>
+
+        <p class="sol-intro-body fade-in" style="margin-top:var(--space-6);">Unlike traditional consulting firms, we remain involved beyond strategy.</p>
+
+        <p class="sol-intro-body fade-in" style="margin-top:var(--space-4);">We do not begin with a standard package. We begin by understanding the business outcome you need to achieve.</p>
+
+        <p class="sol-intro-close fade-in">We do not offer standard consulting packages.<br>We build long-term executive partnerships.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ══ SOLUTION 1 — Executive Advisory ═══════════════════ -->
+    <article class="sol-block" aria-labelledby="sol1-title">
+
+      <div class="sol-text sol-text--white fade-in">
+        <span class="sol-num" aria-hidden="true">01</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 01</span>
+          <h2 class="sol-headline" id="sol1-title">Executive Advisory</h2>
+          <p class="sol-subtitle">Strategic guidance for leaders making high-impact growth, investment and transformation decisions.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Leadership teams and boards facing high-stakes growth or transformation decisions often lack an independent executive perspective to challenge assumptions and sharpen priorities.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">Supporting Boards, CEOs and senior executives in making informed commercial decisions, navigating organisational change, and defining long-term growth strategies.</p>
+          <p class="sol-eng-label">Typical engagements include</p>
+          <ul class="sol-engagements">
+            <li>Growth strategy</li>
+            <li>Leadership alignment</li>
+            <li>Commercial reviews</li>
+            <li>Board-level decision support</li>
+            <li>Organisational transformation</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Faster strategic decisions</li>
+            <li>Clearer priorities</li>
+            <li>Stronger leadership alignment</li>
+            <li>Improved commercial performance</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">Boards, CEOs and senior executives navigating high-stakes growth, transformation or investment decisions.</p>
+          <a href="contact.html" class="sol-text-link">
+            Discuss an Executive Advisory Engagement
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-vlada-karpovich-7433840.jpg');background-size:cover;background-position:65% 45%;"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ SOLUTION 2 — International Market Expansion ══════ -->
+    <article class="sol-block sol-block--reversed" aria-labelledby="sol2-title">
+
+      <div class="sol-text sol-text--ivory fade-in">
+        <span class="sol-num" aria-hidden="true">02</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 02</span>
+          <h2 class="sol-headline" id="sol2-title">International Market Expansion</h2>
+          <p class="sol-subtitle">Expand into new markets with greater confidence and lower execution risk.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Organisations expanding internationally often underestimate execution risk, local complexity and the time required to establish credible market presence.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">Expanding internationally requires more than identifying opportunity. We help organisations assess market potential, develop entry strategies, establish regional networks, and execute expansion plans across APAC, the Middle East and EMEA.</p>
+          <p class="sol-eng-label">Typical engagements include</p>
+          <ul class="sol-engagements">
+            <li>Market assessment</li>
+            <li>Entry strategy</li>
+            <li>Partner identification</li>
+            <li>Regional operating model</li>
+            <li>Stakeholder engagement</li>
+            <li>Launch support</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Faster market access</li>
+            <li>Lower expansion risk</li>
+            <li>Stronger local relationships</li>
+            <li>Sustainable regional presence</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">International businesses, private equity portfolio companies, technology firms, manufacturers.</p>
+          <a href="contact.html" class="sol-text-link">
+            Discuss Your Market Expansion Objectives
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-realcereal-15480456.jpg');background-position:80% 40%;"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ SOLUTION 3 — Commercial Growth & BD ═══════════════ -->
+    <article class="sol-block" aria-labelledby="sol3-title">
+
+      <div class="sol-text sol-text--white fade-in">
+        <span class="sol-num" aria-hidden="true">03</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 03</span>
+          <h2 class="sol-headline" id="sol3-title">Commercial Growth &amp; Business Development</h2>
+          <p class="sol-subtitle">Turn strategic ambition into sustainable commercial momentum.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Many organisations have strong capabilities but struggle to convert them into consistent, scalable commercial momentum.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">Commercial success depends on relationships, positioning, and disciplined execution. Sygnific helps organisations strengthen sales performance, develop strategic partnerships, improve market positioning, and create sustainable revenue pipelines.</p>
+          <p class="sol-eng-label">Typical engagements include</p>
+          <ul class="sol-engagements">
+            <li>Commercial strategy</li>
+            <li>Sales leadership</li>
+            <li>Pipeline development</li>
+            <li>Strategic partnerships</li>
+            <li>Channel strategy</li>
+            <li>Key-account development</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Stronger commercial performance</li>
+            <li>Higher-quality partnerships</li>
+            <li>Sustainable pipeline</li>
+            <li>Measurable revenue impact</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">Commercial leaders, business development teams and organisations building scalable revenue models.</p>
+          <p class="sol-desc" style="margin-top:var(--space-6);font-style:italic;">Commercial growth is built through trust, execution and long-term partnerships.</p>
+          <a href="contact.html" class="sol-text-link">
+            Accelerate Commercial Growth
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-khwanchai-4161612.jpg');"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ SOLUTION 4 — Strategic Representation ════════════ -->
+    <article class="sol-block sol-block--reversed" aria-labelledby="sol4-title">
+
+      <div class="sol-text sol-text--navy fade-in">
+        <span class="sol-num" aria-hidden="true">04</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 04</span>
+          <h2 class="sol-headline" id="sol4-title">Strategic Representation</h2>
+          <p class="sol-subtitle">Build meaningful regional presence without immediately creating permanent infrastructure.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Building a regional presence requires executive credibility and local relationships that take years to develop independently.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">For organisations not yet ready to establish permanent regional offices, Sygnific provides experienced executive representation. We act as an executive extension of your leadership team, not as an agent or traditional distributor, representing your interests, developing relationships, supporting customers, and driving commercial activity on your behalf.</p>
+          <p class="sol-eng-label">Typical engagements include</p>
+          <ul class="sol-engagements">
+            <li>Executive representation</li>
+            <li>Stakeholder engagement</li>
+            <li>Partner development</li>
+            <li>Market intelligence</li>
+            <li>Regional business development</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Lower expansion costs</li>
+            <li>Stronger market credibility</li>
+            <li>Trusted regional relationships</li>
+            <li>Sustainable growth</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">International organisations seeking market presence without establishing permanent regional infrastructure.</p>
+          <a href="contact.html" class="sol-text-link">
+            Explore Strategic Representation
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-kampus-8171214.jpg');"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ SOLUTION 5 — Interim Executive Leadership ════════ -->
+    <article class="sol-block" aria-labelledby="sol5-title">
+
+      <div class="sol-text sol-text--ivory fade-in">
+        <span class="sol-num" aria-hidden="true">05</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 05</span>
+          <h2 class="sol-headline" id="sol5-title">Interim Executive Leadership</h2>
+          <p class="sol-subtitle">Experienced leadership when you need it most.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Transformations, leadership transitions and rapid growth phases demand senior capability immediately, without the lead time of permanent recruitment.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">Periods of change often require experienced executives capable of delivering immediate value. Sygnific provides interim leadership to support commercial transformation, regional management, business restructuring, and strategic growth initiatives.</p>
+          <p class="sol-eng-label">When it is most useful</p>
+          <ul class="sol-engagements">
+            <li>Market entry</li>
+            <li>Transformation</li>
+            <li>Leadership gap</li>
+            <li>Rapid growth</li>
+            <li>Restructuring</li>
+            <li>Critical commercial programme</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Typical roles</p>
+          <ul class="sol-engagements">
+            <li>Interim Managing Director</li>
+            <li>Regional Director</li>
+            <li>Commercial Director</li>
+            <li>Market Entry Lead</li>
+            <li>Transformation Lead</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Immediate senior capability</li>
+            <li>Faster decisions</li>
+            <li>Continuity</li>
+            <li>Accountable execution</li>
+            <li>Knowledge transfer</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">Organisations experiencing leadership transitions, rapid growth, market entry or commercial transformation.</p>
+          <a href="contact.html" class="sol-text-link">
+            Discuss an Interim Leadership Requirement
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-olly-3861980.jpg');"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ SOLUTION 6 — Infrastructure & Data Centre ════════ -->
+    <article class="sol-block sol-block--reversed" aria-labelledby="sol6-title">
+
+      <div class="sol-text sol-text--white fade-in">
+        <span class="sol-num" aria-hidden="true">06</span>
+        <div class="sol-text-inner">
+          <span class="sol-eyebrow">Solution 06</span>
+          <h2 class="sol-headline" id="sol6-title">Infrastructure &amp; Data Centre Advisory</h2>
+          <p class="sol-subtitle">Helping infrastructure businesses grow.</p>
+          <span class="sol-rule" aria-hidden="true"></span>
+          <p class="sol-eng-label">Business Challenge</p>
+          <p class="sol-desc">Organisations entering or expanding within data centre and digital infrastructure markets face a complex web of technical specifications, investment cycles and procurement relationships.</p>
+          <p class="sol-eng-label">How Sygnific Helps</p>
+          <p class="sol-desc">Sygnific supports technology providers, manufacturers, investors, developers, operators and infrastructure organisations operating within the built environment, engineering and digital infrastructure sectors. Our focus is on specification strategy, market positioning, stakeholder access, route-to-market and commercial partnerships.</p>
+          <p class="sol-eng-label">Typical engagements include</p>
+          <ul class="sol-engagements">
+            <li>Data centre market strategy</li>
+            <li>Specification influence</li>
+            <li>Partner strategy</li>
+            <li>Regional representation</li>
+            <li>Commercial development</li>
+          </ul>
+          <p class="sol-eng-label" style="margin-top:var(--space-6);">Outcomes</p>
+          <ul class="sol-engagements">
+            <li>Stronger market positioning</li>
+            <li>Access to decision-makers</li>
+            <li>Better specification opportunities</li>
+            <li>Faster commercial traction</li>
+          </ul>
+          <p class="sol-who-label">Who it is for</p>
+          <p class="sol-who-text">Technology providers, manufacturers, investors, developers, operators and infrastructure organisations.</p>
+          <a href="contact.html" class="sol-text-link">
+            Discuss Infrastructure &amp; Data Centre Growth
+            <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="sol-image"
+        style="background-image: url('assets/images/pexels-cookiecutter-17323801.jpg');"
+        aria-hidden="true"
+        role="presentation"
+      ></div>
+
+    </article>
+
+
+    <!-- ══ ENGAGEMENT MODELS ══════════════════════════════════ -->
+    <section class="sol-models" aria-labelledby="models-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered fade-in">
+          <span class="eyebrow">Engagement Models</span>
+          <h2 id="models-heading">Every engagement is tailored.<br>Every recommendation must lead toward execution.</h2>
+        </div>
+
+        <p class="fade-in" style="text-align:center;font-size:var(--text-base);line-height:var(--leading-relaxed);color:var(--color-text-light);max-width:620px;margin-inline:auto;margin-top:calc(-1 * var(--space-8));">Every client relationship is designed around business objectives rather than predefined service packages.</p>
+
+        <div class="sol-models-grid fade-in-group">
+
+          <div class="sol-model-card">
+            <span class="sol-model-num">01</span>
+            <p class="sol-model-name">Strategic Advisory</p>
+            <p class="sol-model-desc">Regular executive support focused on leadership, growth strategy, and commercial direction.</p>
+          </div>
+
+          <div class="sol-model-card">
+            <span class="sol-model-num">02</span>
+            <p class="sol-model-name">Executive Retainer</p>
+            <p class="sol-model-desc">Long-term partnership providing ongoing executive leadership and regional representation.</p>
+          </div>
+
+          <div class="sol-model-card">
+            <span class="sol-model-num">03</span>
+            <p class="sol-model-name">Project Engagement</p>
+            <p class="sol-model-desc">Dedicated support for specific initiatives, market entries, or strategic projects.</p>
+          </div>
+
+          <div class="sol-model-card">
+            <span class="sol-model-num">04</span>
+            <p class="sol-model-name">Interim Executive Assignment</p>
+            <p class="sol-model-desc">Temporary leadership during periods of transition, growth, or organisational change.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ INDUSTRIES SUPPORTED ═══════════════════════════════ -->
+    <section class="sol-industries" aria-labelledby="industries-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Industries Supported</span>
+          <h2 id="industries-heading" style="color:var(--color-ivory);max-width:700px;">Sector expertise that shapes better strategy.</h2>
+        </div>
+
+        <div class="gold-rule fade-in"></div>
+
+        <p class="fade-in" style="font-size:var(--text-base);line-height:var(--leading-relaxed);color:rgba(247,245,241,0.65);max-width:620px;margin-bottom:var(--space-4);">Sygnific works across sectors where international growth and executive leadership create competitive advantage.</p>
+
+        <div class="sol-industry-tags fade-in-group">
+          <a href="industries.html" class="sol-industry-tag">Data Centres</a>
+          <a href="industries.html" class="sol-industry-tag">Digital Infrastructure</a>
+          <a href="industries.html" class="sol-industry-tag">Building Technologies</a>
+          <a href="industries.html" class="sol-industry-tag">Engineering</a>
+          <a href="industries.html" class="sol-industry-tag">Manufacturing</a>
+          <a href="industries.html" class="sol-industry-tag">Construction</a>
+          <a href="industries.html" class="sol-industry-tag">Smart Cities</a>
+          <a href="industries.html" class="sol-industry-tag">Industrial Technology</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ WHY CLIENTS CHOOSE SYGNIFIC ═══════════════════════ -->
+    <section class="sol-why" aria-labelledby="why-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Why Clients Choose Sygnific</span>
+          <h2 id="why-heading">Capability that creates<br>measurable difference.</h2>
+        </div>
+
+        <div class="sol-why-grid fade-in-group">
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">Executive-level expertise</span>
+          </div>
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">Practical commercial experience</span>
+          </div>
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">International market knowledge</span>
+          </div>
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">Flexible engagement models</span>
+          </div>
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">Long-term partnerships</span>
+          </div>
+
+          <div class="sol-why-item">
+            <svg class="sol-why-check" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="4,10 8,14 16,6"/>
+            </svg>
+            <span class="sol-why-text">Strategy combined with execution</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ CTA ════════════════════════════════════════════════ -->
+    <section class="sol-cta fade-in" aria-label="Begin Your Growth Strategy">
+      <div class="container">
+        <div class="sol-audience-tags fade-in">
+          <span class="sol-audience-tag">Boards</span>
+          <span class="sol-audience-tag">CEOs</span>
+          <span class="sol-audience-tag">Managing Directors</span>
+          <span class="sol-audience-tag">Business Owners</span>
+          <span class="sol-audience-tag">Regional Leadership Teams</span>
+        </div>
+        <h2 class="sol-cta-heading">Let's Build Your Growth Strategy</h2>
+        <p class="sol-cta-sub">Every engagement begins with understanding your objectives. Whether your organisation requires executive advisory, regional representation, market expansion, or commercial leadership, Sygnific develops solutions aligned with your ambitions, not predefined consulting packages.</p>
+        <div class="sol-cta-btns">
+          <a href="https://koalendar.com/u/enrico-ferri" data-koalendar-widget class="btn btn--primary btn--lg">Begin a Partnership</a>
+          <a href="contact.html#contact-form" class="btn btn--secondary btn--lg">Begin a Confidential Conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo-pair" style="margin-bottom:var(--space-5);">
+            <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img logo-img--invert">
+              </div>
+            </a>
+            <span class="logo-pair-sep logo-pair-sep--invert"></span>
+            <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img logo-img--invert">
+              </div>
+            </a>
+          </div>
+          <p class="footer-tagline">Executive Growth &amp; Market Expansion Partner</p>
+          <p class="footer-desc">Helping organisations expand internationally through executive leadership, strategic partnerships and commercial execution.</p>
+          <span class="footer-subtag">Driving Growth Across APAC, EMEA &amp; Beyond</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <nav aria-label="Footer company links">
+            <ul class="footer-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="solutions.html">Solutions</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="leadership.html">Leadership</a></li>
+              <li><a href="insights.html">Insights</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <nav aria-label="Footer legal links">
+            <ul class="footer-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address class="footer-address" style="font-style:normal;">
+            Sygnific FZ-LLC<br>
+            MBAM0485, Compass Building<br>
+            Al Shohada Road<br>
+            Al Hamra Industrial Zone-FZ<br>
+            Ras Al Khaimah, United Arab Emirates
+          </address>
+          <a href="mailto:info@sygnific.global" class="footer-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+            info@sygnific.global
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">
+          &copy; <span class="footer-year"></span> Sygnific FZ-LLC. All rights reserved.
+        </span>
+        <nav class="footer-legal-inline" aria-label="Footer legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </nav>
+        <span class="footer-credit">Designed by <a href="https://www.mayordigital.com/en" target="_blank" rel="noopener noreferrer">Mayordigital</a> &mdash; Strategic Partner</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="2,9 7,4 12,9"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+
+  <script>
+    window.Koalendar = window.Koalendar || function () { (Koalendar.props = Koalendar.props || []).push(arguments); };
+  </script>
+  <script async src="https://koalendar.com/assets/widget.js"></script>
+  <script>Koalendar('init');</script>
+</body>
+</html>
