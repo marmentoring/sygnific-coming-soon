@@ -1,0 +1,118 @@
+/* ============================================================
+   SYGNIFIC — CSS Variables
+   Global design tokens: colors, typography, spacing, layout
+   ============================================================ */
+
+:root {
+
+  /* ── COLORS ──────────────────────────────────────────────── */
+  --color-navy:         #0B1B2B;
+  --color-navy-light:   #10202F;
+  --color-navy-mid:     #1A2E42;
+  --color-ivory:        #F7F5F1;
+  --color-ivory-dark:   #EDE9E2;
+  --color-gold:         #B08D57;
+  --color-gold-light:   #C9A878;
+  --color-gold-dim:     rgba(176, 141, 87, 0.35);
+  --color-text:         #4A4A4A;
+  --color-text-light:   #7A7A7A;
+  --color-text-muted:   #A0A0A0;
+  --color-white:        #FFFFFF;
+  --color-black:        #000000;
+
+  /* Semantic aliases */
+  --color-surface:      var(--color-ivory);
+  --color-surface-dark: var(--color-navy);
+  --color-accent:       var(--color-gold);
+  --color-accent-hover: var(--color-gold-light);
+
+  /* ── TYPOGRAPHY ──────────────────────────────────────────── */
+  --font-heading: 'ITC Avant Garde Gothic Std', 'Futura', 'Century Gothic', sans-serif;
+  --font-body:    'ITC Avant Garde Gothic Std', 'Futura', 'Century Gothic', sans-serif;
+
+  /* Font weight aliases */
+  --font-weight-xl:   200;   /* Extra Light — corpo principale, paragrafi lunghi */
+  --font-weight-book: 400;   /* Book — navigazione, label, UI elements */
+  --font-weight-demi: 600;   /* Demi — titoli sezione, CTA, elementi bold */
+
+  /* Type scale */
+  --text-xs:   0.6875rem;  /* 11px  — labels, eyebrows */
+  --text-sm:   0.8125rem;  /* 13px  — captions */
+  --text-base: 1rem;       /* 16px  — body */
+  --text-lg:   1.125rem;   /* 18px  */
+  --text-xl:   1.25rem;    /* 20px  */
+  --text-2xl:  1.5rem;     /* 24px  */
+  --text-3xl:  2rem;       /* 32px  */
+  --text-4xl:  2.5rem;     /* 40px  */
+  --text-5xl:  3.25rem;    /* 52px  */
+  --text-6xl:  4.25rem;    /* 68px  */
+  --text-7xl:  5.5rem;     /* 88px  */
+
+  /* Line heights */
+  --leading-tight:  1.1;
+  --leading-snug:   1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.7;
+
+  /* Letter spacings */
+  --tracking-tight:  -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.08em;
+  --tracking-widest:  0.25em;
+
+  /* ── SPACING (8pt grid) ──────────────────────────────────── */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+  --space-40:  10rem;     /* 160px */
+  --space-48:  12rem;     /* 192px */
+
+  /* ── LAYOUT ──────────────────────────────────────────────── */
+  --container-max:     1280px;
+  --container-wide:    1440px;
+  --container-narrow:  800px;
+  --container-padding: var(--space-6);
+
+  --header-height: 120px;
+
+  /* ── TRANSITIONS ─────────────────────────────────────────── */
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:     cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-inout:  cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  --transition-fast:  150ms var(--ease-out);
+  --transition-base:  250ms var(--ease-out);
+  --transition-slow:  400ms var(--ease-out);
+
+  /* ── ELEVATION / SHADOWS ─────────────────────────────────── */
+  --shadow-xs:  0 1px 2px  rgba(0, 0, 0, 0.06);
+  --shadow-sm:  0 2px 6px  rgba(0, 0, 0, 0.09);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.13);
+  --shadow-lg:  0 8px 32px rgba(0, 0, 0, 0.18);
+  --shadow-xl:  0 16px 48px rgba(0, 0, 0, 0.24);
+
+  /* ── BORDER RADIUS ───────────────────────────────────────── */
+  --radius-sm:   2px;
+  --radius-md:   4px;
+  --radius-lg:   8px;
+  --radius-full: 9999px;
+
+  /* ── Z-INDEX SCALE ───────────────────────────────────────── */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 20;
+  --z-sticky:   100;
+  --z-overlay:  200;
+  --z-modal:    300;
+  --z-toast:    400;
+}

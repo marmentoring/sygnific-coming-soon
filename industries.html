@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Industries | Data Centres, Infrastructure, Engineering &amp; Smart Cities — Sygnific</title>
+  <meta name="description" content="Sygnific's industry expertise spans data centres &amp; digital infrastructure, building technologies, engineering &amp; manufacturing, infrastructure &amp; construction, and smart cities across APAC, Middle East and EMEA.">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Industries | Data Centres, Infrastructure, Engineering &amp; Smart Cities — Sygnific">
+  <meta property="og:description" content="Sygnific's industry expertise spans data centres &amp; digital infrastructure, building technologies, engineering &amp; manufacturing, infrastructure &amp; construction, and smart cities across APAC, Middle East and EMEA.">
+  <meta property="og:url"         content="https://sygnific.global/industries">
+  <meta property="og:image"       content="https://sygnific.global/assets/images/og-industries.jpg">
+
+  <link rel="canonical" href="https://sygnific.global/industries">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* ══ INDUSTRIES PAGE ═══════════════════════════════════════ */
+
+    /* ── HERO ──────────────────────────────────────────────── */
+
+    .ind-hero {
+      background:
+        radial-gradient(ellipse at 18% 55%, rgba(11, 47, 90, 0.55) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 25%, rgba(176, 141, 87, 0.07) 0%, transparent 45%),
+        linear-gradient(140deg, #071219 0%, #0D1E2D 45%, #0B1B2B 100%);
+      padding-top: calc(var(--header-height) + var(--space-20));
+      padding-bottom: var(--space-20);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(176, 141, 87, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(176, 141, 87, 0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+
+    .ind-hero .container { position: relative; z-index: 1; }
+
+    .ind-hero .container { text-align: center; }
+
+    .ind-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-4xl), 5.5vw, var(--text-7xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-6);
+    }
+
+    .ind-hero h1 em {
+      color: var(--color-gold);
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .ind-hero-sub {
+      font-size: var(--text-lg);
+      font-weight: 300;
+      color: rgba(247, 245, 241, 0.55);
+      max-width: 520px;
+      margin-inline: auto;
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ── INTRO ─────────────────────────────────────────────── */
+
+    .ind-intro {
+      background: var(--color-white);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-intro::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .ind-intro .container { position: relative; z-index: 1; }
+
+    .ind-intro-body {
+      font-size: var(--text-lg);
+      line-height: 1.85;
+      color: var(--color-text);
+      max-width: 860px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    /* ── FLIP CARD GRID ────────────────────────────────────── */
+
+    .ind-sectors {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+    }
+
+    .ind-sectors-header {
+      margin-bottom: var(--space-12);
+    }
+
+    /* 6-column virtual grid: cards 1-3 span 2 each (full row),
+       cards 4-5 centered by starting at cols 2 and 4 */
+    .ind-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: var(--space-5);
+    }
+
+    .ind-card {
+      grid-column: span 2;
+      height: 580px;
+      perspective: 1400px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Center the 4th card at col 2-3, 5th at col 4-5 */
+    .ind-card:nth-child(4) { grid-column: 2 / span 2; }
+    .ind-card:nth-child(5) { grid-column: 4 / span 2; }
+
+    .ind-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ind-card.is-flipped .ind-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .ind-card-front,
+    .ind-card-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      overflow: hidden;
+    }
+
+    /* ── CARD FRONT ──────────────────────────────────────── */
+
+    .ind-card-front {
+      background: var(--color-navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-8);
+    }
+
+    /* Sector photograph — visible, atmospheric */
+    .ind-card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.38;
+      transition: opacity 600ms var(--ease-out);
+      z-index: 0;
+    }
+
+    .ind-card:hover:not(.is-flipped) .ind-card-bg {
+      opacity: 0.5;
+    }
+
+    /* Gradient veil: fades from transparent at top to navy at bottom for text legibility */
+    .ind-card-front::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(11, 27, 43, 0.1) 0%,
+        rgba(11, 27, 43, 0.6) 55%,
+        rgba(11, 27, 43, 0.88) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .ind-card-front-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ind-card-rule {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--color-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .ind-card-num {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .ind-card-title {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2.2vw, var(--text-4xl));
+      font-weight: 300;
+      color: var(--color-ivory);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+      margin-bottom: var(--space-6);
+    }
+
+    @keyframes ind-hint-nudge {
+      0%, 100% { transform: translateX(0); }
+      50%       { transform: translateX(5px); }
+    }
+
+    .ind-card-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(247, 245, 241, 0.6);
+      transition: color 300ms var(--ease-out);
+    }
+
+    .ind-card:hover:not(.is-flipped) .ind-card-hint {
+      color: var(--color-gold);
+    }
+
+    .ind-card-hint-icon {
+      animation: ind-hint-nudge 1.6s ease-in-out infinite;
+    }
+
+    .ind-card:hover:not(.is-flipped) .ind-card-hint-icon {
+      animation: none;
+      transform: rotate(90deg);
+      transition: transform 400ms var(--ease-out);
+    }
+
+    /* ── CARD BACK ───────────────────────────────────────── */
+
+    .ind-card-back {
+      background: var(--color-white);
+      transform: rotateY(180deg);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Thin gold border accent on back */
+    .ind-card-back::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--color-gold), transparent);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    /* Large watermark number */
+    .ind-card-back-num {
+      position: absolute;
+      bottom: var(--space-4);
+      right: var(--space-5);
+      font-family: var(--font-heading);
+      font-size: clamp(5rem, 9vw, 8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(11, 27, 43, 0.05);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .ind-card-back-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .ind-card-back-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-4);
+    }
+
+    .ind-card-back-rule {
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--color-gold);
+      opacity: 0.6;
+      margin-bottom: var(--space-5);
+    }
+
+    .ind-card-back-body {
+      font-size: 0.78rem;
+      line-height: 1.78;
+      color: rgba(11, 27, 43, 0.68);
+      flex-grow: 1;
+    }
+
+    /* Typical clients on back */
+    .ind-back-clients-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(11, 27, 43, 0.3);
+      margin-top: var(--space-5);
+      margin-bottom: var(--space-3);
+    }
+
+    .ind-back-clients {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .ind-back-client-tag {
+      font-size: 10px;
+      color: rgba(11, 27, 43, 0.45);
+      border: 1px solid rgba(11, 27, 43, 0.12);
+      padding: 2px 8px;
+      letter-spacing: 0.02em;
+    }
+
+    /* Close hint bottom of back */
+    .ind-card-close {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: rgba(11, 27, 43, 0.22);
+      margin-top: var(--space-5);
+      transition: color 300ms;
+    }
+
+    .ind-card:hover.is-flipped .ind-card-close {
+      color: rgba(11, 27, 43, 0.5);
+    }
+
+    /* ── EXECUTIVE ADVISORY ACROSS INDUSTRIES ──────────────── */
+
+    .ind-advisory {
+      background: var(--color-navy);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-advisory::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1529158062015-d8a0176bcb62?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .ind-advisory .container { position: relative; z-index: 1; }
+
+    .ind-advisory-quote {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2.8vw, var(--text-4xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-ivory);
+      line-height: 1.4;
+      max-width: 900px;
+      border-left: 2px solid var(--color-gold);
+      padding-left: var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+
+    /* ── HOW WE CREATE VALUE ───────────────────────────────── */
+
+    .ind-value {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-value::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.03;
+      pointer-events: none;
+    }
+
+    .ind-value .container { position: relative; z-index: 1; }
+
+    .ind-value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 var(--space-20);
+      margin-top: var(--space-12);
+    }
+
+    .ind-value-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-5);
+      padding: var(--space-5) 0;
+      border-bottom: 1px solid var(--color-ivory-dark);
+    }
+
+    .ind-value-num {
+      font-family: var(--font-heading);
+      font-size: var(--text-2xl);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(176, 141, 87, 0.45);
+      line-height: 1;
+      flex-shrink: 0;
+      width: 2rem;
+    }
+
+    .ind-value-text {
+      font-size: var(--text-base);
+      font-weight: 400;
+      color: var(--color-navy);
+      line-height: var(--leading-snug);
+      padding-top: 0.15em;
+    }
+
+    /* ── GEOGRAPHIC REACH ──────────────────────────────────── */
+
+    .ind-geo {
+      background: var(--color-navy);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-geo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.09;
+      pointer-events: none;
+    }
+
+    .ind-geo .container { position: relative; z-index: 1; }
+
+    .ind-geo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(176, 141, 87, 0.12);
+      margin-top: var(--space-12);
+      border: 1px solid rgba(176, 141, 87, 0.12);
+    }
+
+    .ind-geo-region {
+      background: var(--color-navy);
+      padding: var(--space-10) var(--space-8);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      transition: background var(--transition-base);
+    }
+
+    .ind-geo-region:hover {
+      background: var(--color-navy-light);
+    }
+
+    .ind-geo-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+    }
+
+    .ind-geo-name {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2vw, var(--text-3xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-ivory);
+      line-height: var(--leading-tight);
+    }
+
+    .ind-geo-rule {
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--color-gold);
+      opacity: 0.6;
+    }
+
+    .ind-geo-tagline {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-gold);
+      line-height: var(--leading-snug);
+      letter-spacing: 0.01em;
+    }
+
+    .ind-geo-markets {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: rgba(247, 245, 241, 0.55);
+    }
+
+    /* ── LOOKING BEYOND TODAY ──────────────────────────────── */
+
+    .ind-beyond {
+      background: var(--color-white);
+      padding-block: var(--space-24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-beyond::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=60&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.04;
+      pointer-events: none;
+    }
+
+    .ind-beyond .container { position: relative; z-index: 1; }
+
+    .ind-beyond-quote {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 2.5vw, var(--text-4xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-navy);
+      line-height: 1.4;
+      max-width: 860px;
+      margin-inline: auto;
+      text-align: center;
+      border-top: 1px solid rgba(176, 141, 87, 0.25);
+      border-bottom: 1px solid rgba(176, 141, 87, 0.25);
+      padding-block: var(--space-12);
+    }
+
+    .ind-beyond-quote em { color: var(--color-gold); font-style: normal; }
+    .ind-beyond-quote strong { color: var(--color-gold); font-weight: 600; }
+
+    /* ── CTA ────────────────────────────────────────────────── */
+
+    .ind-cta {
+      background: var(--color-ivory);
+      padding-block: var(--space-24);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-cta .container { position: relative; z-index: 1; }
+
+    .ind-cta-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 4vw, var(--text-5xl));
+      font-weight: 300;
+      color: var(--color-navy);
+      margin-bottom: var(--space-6);
+      line-height: var(--leading-tight);
+    }
+
+    .ind-cta-sub {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-light);
+      max-width: 620px;
+      margin: 0 auto var(--space-10);
+    }
+
+    .ind-cta-btns {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FIVE FORCES ─────────────────────────────────────────── */
+
+    .ind-forces {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+    }
+
+    .ind-force-item {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-navy);
+      border: 1px solid rgba(176, 141, 87, 0.32);
+      padding: var(--space-2) var(--space-5);
+    }
+
+    .ind-force-sep {
+      font-size: var(--text-xs);
+      color: rgba(176, 141, 87, 0.45);
+      user-select: none;
+    }
+
+    /* ── CARD BACK — structured sections ────────────────────── */
+
+    .ind-back-sections {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .ind-back-section-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: rgba(11, 27, 43, 0.3);
+      margin-bottom: var(--space-2);
+    }
+
+    /* ── CREDIBILITY STRIP ───────────────────────────────────── */
+
+    .ind-credibility {
+      background: var(--color-navy);
+      padding-block: var(--space-16);
+      border-top: 1px solid rgba(176, 141, 87, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ind-credibility .container { position: relative; z-index: 1; }
+
+    .ind-cred-eyebrow {
+      display: block;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: var(--tracking-widest);
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: var(--space-10);
+    }
+
+    .ind-cred-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(176, 141, 87, 0.12);
+      border: 1px solid rgba(176, 141, 87, 0.12);
+    }
+
+    .ind-cred-item {
+      background: var(--color-navy);
+      padding: var(--space-8) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: background var(--transition-base);
+    }
+
+    .ind-cred-item:hover { background: var(--color-navy-light); }
+
+    .ind-cred-headline {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-xl), 1.6vw, var(--text-2xl));
+      font-weight: 300;
+      font-style: italic;
+      color: var(--color-ivory);
+      line-height: 1.3;
+    }
+
+    .ind-cred-desc {
+      font-size: var(--text-sm);
+      color: rgba(247, 245, 241, 0.55);
+      line-height: var(--leading-relaxed);
+    }
+
+    /* ── LOOKING BEYOND — body text ─────────────────────────── */
+
+    .ind-beyond-body {
+      font-size: var(--text-base);
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-light);
+      max-width: 720px;
+      margin: var(--space-8) auto 0;
+      text-align: center;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+
+    @media (max-width: 1280px) {
+      .ind-card-title { font-size: clamp(var(--text-xl), 2vw, var(--text-3xl)); }
+    }
+
+    @media (max-width: 1024px) {
+      .ind-card { height: 560px; }
+      .ind-geo-grid { grid-template-columns: 1fr; gap: 1px; }
+      .ind-cred-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .ind-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+      }
+      .ind-card {
+        grid-column: span 1 !important;
+        height: 460px;
+      }
+      .ind-card-title { font-size: var(--text-2xl); }
+      .ind-card-back-body { font-size: 0.73rem; }
+
+      .ind-value-grid { grid-template-columns: 1fr; gap: 0; }
+
+      .ind-hero h1 { font-size: clamp(var(--text-3xl), 7vw, var(--text-5xl)); }
+      .ind-intro { padding-block: var(--space-16); }
+      .ind-sectors { padding-block: var(--space-16); }
+      .ind-advisory { padding-block: var(--space-16); }
+      .ind-value { padding-block: var(--space-16); }
+      .ind-credibility { padding-block: var(--space-12); }
+      .ind-cred-grid { grid-template-columns: 1fr; }
+      .ind-geo { padding-block: var(--space-16); }
+      .ind-beyond { padding-block: var(--space-16); }
+      .ind-cta { padding-block: var(--space-16); }
+      .ind-advisory-quote { padding-left: var(--space-5); }
+      .ind-forces { gap: var(--space-2); }
+    }
+
+    @media (max-width: 480px) {
+      .ind-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .ind-card {
+        height: 440px;
+      }
+      .ind-geo-region { padding: var(--space-8) var(--space-5); }
+      .ind-cta-btns { flex-direction: column; align-items: center; }
+      .ind-cta-btns .btn { width: 100%; }
+      .ind-beyond-quote { padding-block: var(--space-8); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ─────────────────────────────────────────────── -->
+  <header class="site-header site-header--light" role="banner">
+    <div class="header-inner">
+
+      <div class="logo-pair">
+        <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img">
+          </div>
+        </a>
+        <span class="logo-pair-sep"></span>
+        <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+          <div class="logo-img-wrap">
+            <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img">
+          </div>
+        </a>
+      </div>
+
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/"               class="nav-link">Home</a>
+        <a href="about.html"      class="nav-link">About</a>
+        <a href="solutions.html"  class="nav-link">Solutions</a>
+        <a href="industries.html" class="nav-link" aria-current="page">Industries</a>
+        <a href="leadership.html" class="nav-link">Leadership</a>
+        <a href="insights.html"   class="nav-link">Insights</a>
+        <a href="contact.html"    class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="contact.html#contact-form" class="btn btn--secondary btn--sm">Begin a Partnership</a>
+      </div>
+
+      <button
+        class="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        style="--hamburger-color: var(--color-navy);"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ── MOBILE NAV ─────────────────────────────────────────── -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="4" y1="4" x2="20" y2="20"/>
+        <line x1="20" y1="4" x2="4" y2="20"/>
+      </svg>
+    </button>
+    <a href="/"               class="nav-link">Home</a>
+    <a href="about.html"      class="nav-link">About</a>
+    <a href="solutions.html"  class="nav-link">Solutions</a>
+    <a href="industries.html" class="nav-link" aria-current="page">Industries</a>
+    <a href="leadership.html" class="nav-link">Leadership</a>
+    <a href="insights.html"   class="nav-link">Insights</a>
+    <a href="contact.html"    class="nav-link">Contact</a>
+    <div class="mobile-nav-footer">sygnific.global</div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ══ HERO ══════════════════════════════════════════════ -->
+    <section class="ind-hero">
+      <div class="container">
+        <h1>
+          <span class="hero-ln"><span class="hero-ln-inner">Where Industry</span></span>
+          <span class="hero-ln"><span class="hero-ln-inner">Expertise Becomes</span></span>
+          <span class="hero-ln"><span class="hero-ln-inner"><em>Commercial Advantage.</em></span></span>
+        </h1>
+        <p class="ind-hero-sub hero-sub-anim">Executive leadership and commercial execution for organisations operating in complex, rapidly evolving industries.</p>
+      </div>
+    </section>
+
+
+    <!-- ══ INTRO ══════════════════════════════════════════════ -->
+    <section class="ind-intro" aria-labelledby="ind-intro-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered fade-in">
+          <span class="eyebrow">Our Approach</span>
+          <h2 id="ind-intro-heading" style="max-width:780px;margin-inline:auto;">Every industry has different rules. Growth requires understanding them.</h2>
+        </div>
+
+        <p class="ind-intro-body fade-in">Every industry operates under different rules, shaped by technology, regulation, capital access, the decision-makers who control outcomes and the discipline of execution. What drives growth in digital infrastructure is fundamentally different from what governs the built environment, engineering or manufacturing. Generic strategies fail because they ignore these realities. Sygnific works alongside organisations in complex, high-value sectors where executive leadership, strategic positioning and disciplined execution create lasting competitive advantage. We tailor our approach to the commercial realities of each sector. Sygnific helps clients navigate all five.</p>
+
+        <div class="ind-forces fade-in" aria-label="Five operating forces: Technology, Regulation, Capital, Decision-makers, Execution">
+          <span class="ind-force-item">Technology</span>
+          <span class="ind-force-sep" aria-hidden="true">→</span>
+          <span class="ind-force-item">Regulation</span>
+          <span class="ind-force-sep" aria-hidden="true">→</span>
+          <span class="ind-force-item">Capital</span>
+          <span class="ind-force-sep" aria-hidden="true">→</span>
+          <span class="ind-force-item">Decision-makers</span>
+          <span class="ind-force-sep" aria-hidden="true">→</span>
+          <span class="ind-force-item">Execution</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ SECTOR FLIP CARDS ════════════════════════════════ -->
+    <section class="ind-sectors" aria-labelledby="ind-sectors-heading">
+      <div class="container">
+
+        <div class="section-header ind-sectors-header fade-in">
+          <span class="eyebrow">Sectors We Serve</span>
+          <h2 id="ind-sectors-heading">Five industries. One standard<br>of executive commitment.</h2>
+        </div>
+
+        <div class="ind-cards-grid">
+
+          <!-- Card 1: Data Centres -->
+          <div
+            class="ind-card fade-in"
+            role="button"
+            tabindex="0"
+            aria-label="Sector 01: Data Centres and Digital Infrastructure. Click to explore."
+          >
+            <div class="ind-card-inner">
+
+              <div class="ind-card-front">
+                <div class="ind-card-bg" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=70&auto=format&fit=crop');"></div>
+                <div class="ind-card-front-content">
+                  <span class="ind-card-rule" aria-hidden="true"></span>
+                  <span class="ind-card-num">Sector 01</span>
+                  <h3 class="ind-card-title">Data Centres &amp;<br>Digital Infrastructure</h3>
+                  <span class="ind-card-hint" aria-hidden="true">
+                    <svg class="ind-card-hint-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 6h8M6 2l4 4-4 4"/>
+                    </svg>
+                    Explore
+                  </span>
+                </div>
+              </div>
+
+              <div class="ind-card-back">
+                <span class="ind-card-back-num" aria-hidden="true">01</span>
+                <div class="ind-card-back-content">
+                  <span class="ind-card-back-label">Data Centres &amp; Digital Infrastructure</span>
+                  <span class="ind-card-back-rule" aria-hidden="true"></span>
+                  <div class="ind-back-sections">
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Commercial Reality</p>
+                      <p class="ind-card-back-body">AI is placing new pressure on power capacity, investment cycles and global supply chains while driving demand for digital infrastructure at scale.</p>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Typical Clients</p>
+                      <div class="ind-back-clients">
+                        <span class="ind-back-client-tag">Manufacturers</span>
+                        <span class="ind-back-client-tag">Technology providers</span>
+                        <span class="ind-back-client-tag">Infrastructure specialists</span>
+                        <span class="ind-back-client-tag">Investors &amp; operators</span>
+                      </div>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">How We Create Value</p>
+                      <p class="ind-card-back-body">Strengthening market positioning, improving specification influence and developing strategic relationships with operators, developers and technology suppliers.</p>
+                    </div>
+                  </div>
+                  <span class="ind-card-close" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 5H2M5 2L2 5l3 3"/>
+                    </svg>
+                    Back
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 2: Building Technologies -->
+          <div
+            class="ind-card fade-in"
+            role="button"
+            tabindex="0"
+            aria-label="Sector 02: Building Technologies. Click to explore."
+          >
+            <div class="ind-card-inner">
+
+              <div class="ind-card-front">
+                <div class="ind-card-bg" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=70&auto=format&fit=crop');background-position:center 60%;"></div>
+                <div class="ind-card-front-content">
+                  <span class="ind-card-rule" aria-hidden="true"></span>
+                  <span class="ind-card-num">Sector 02</span>
+                  <h3 class="ind-card-title">Building<br>Technologies</h3>
+                  <span class="ind-card-hint" aria-hidden="true">
+                    <svg class="ind-card-hint-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 6h8M6 2l4 4-4 4"/>
+                    </svg>
+                    Explore
+                  </span>
+                </div>
+              </div>
+
+              <div class="ind-card-back">
+                <span class="ind-card-back-num" aria-hidden="true">02</span>
+                <div class="ind-card-back-content">
+                  <span class="ind-card-back-label">Building Technologies</span>
+                  <span class="ind-card-back-rule" aria-hidden="true"></span>
+                  <div class="ind-back-sections">
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Commercial Reality</p>
+                      <p class="ind-card-back-body">Buildings are becoming more intelligent, sustainable and digitally connected. Manufacturers and technology providers must position themselves earlier in the project lifecycle.</p>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Typical Clients</p>
+                      <div class="ind-back-clients">
+                        <span class="ind-back-client-tag">Specifiers</span>
+                        <span class="ind-back-client-tag">Consultants</span>
+                        <span class="ind-back-client-tag">Developers</span>
+                        <span class="ind-back-client-tag">Regional partners</span>
+                        <span class="ind-back-client-tag">Manufacturers</span>
+                      </div>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">How We Create Value</p>
+                      <p class="ind-card-back-body">Strengthening market visibility, engaging key specifiers and consultants, and creating sustainable specification opportunities across regional project pipelines.</p>
+                    </div>
+                  </div>
+                  <span class="ind-card-close" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 5H2M5 2L2 5l3 3"/>
+                    </svg>
+                    Back
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 3: Engineering & Manufacturing -->
+          <div
+            class="ind-card fade-in"
+            role="button"
+            tabindex="0"
+            aria-label="Sector 03: Engineering and Manufacturing. Click to explore."
+          >
+            <div class="ind-card-inner">
+
+              <div class="ind-card-front">
+                <div class="ind-card-bg" style="background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=900&q=70&auto=format&fit=crop');"></div>
+                <div class="ind-card-front-content">
+                  <span class="ind-card-rule" aria-hidden="true"></span>
+                  <span class="ind-card-num">Sector 03</span>
+                  <h3 class="ind-card-title">Engineering &amp;<br>Manufacturing</h3>
+                  <span class="ind-card-hint" aria-hidden="true">
+                    <svg class="ind-card-hint-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 6h8M6 2l4 4-4 4"/>
+                    </svg>
+                    Explore
+                  </span>
+                </div>
+              </div>
+
+              <div class="ind-card-back">
+                <span class="ind-card-back-num" aria-hidden="true">03</span>
+                <div class="ind-card-back-content">
+                  <span class="ind-card-back-label">Engineering &amp; Manufacturing</span>
+                  <span class="ind-card-back-rule" aria-hidden="true"></span>
+                  <div class="ind-back-sections">
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Commercial Reality</p>
+                      <p class="ind-card-back-body">Outstanding products do not automatically create commercial success. Technical capability must be matched with effective market strategy and trusted regional relationships.</p>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Typical Clients</p>
+                      <div class="ind-back-clients">
+                        <span class="ind-back-client-tag">Manufacturers</span>
+                        <span class="ind-back-client-tag">Industrial technology companies</span>
+                        <span class="ind-back-client-tag">Engineering groups</span>
+                        <span class="ind-back-client-tag">Export-led businesses</span>
+                      </div>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">How We Create Value</p>
+                      <p class="ind-card-back-body">Translating engineering excellence into sustainable business growth through effective market strategy, regional leadership and disciplined commercial execution.</p>
+                    </div>
+                  </div>
+                  <span class="ind-card-close" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 5H2M5 2L2 5l3 3"/>
+                    </svg>
+                    Back
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 4: Infrastructure & Construction (centered left in row 2) -->
+          <div
+            class="ind-card fade-in"
+            role="button"
+            tabindex="0"
+            aria-label="Sector 04: Infrastructure and Construction. Click to explore."
+          >
+            <div class="ind-card-inner">
+
+              <div class="ind-card-front">
+                <div class="ind-card-bg" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=70&auto=format&fit=crop');background-position:center 40%;"></div>
+                <div class="ind-card-front-content">
+                  <span class="ind-card-rule" aria-hidden="true"></span>
+                  <span class="ind-card-num">Sector 04</span>
+                  <h3 class="ind-card-title">Infrastructure &amp;<br>Construction</h3>
+                  <span class="ind-card-hint" aria-hidden="true">
+                    <svg class="ind-card-hint-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 6h8M6 2l4 4-4 4"/>
+                    </svg>
+                    Explore
+                  </span>
+                </div>
+              </div>
+
+              <div class="ind-card-back">
+                <span class="ind-card-back-num" aria-hidden="true">04</span>
+                <div class="ind-card-back-content">
+                  <span class="ind-card-back-label">Infrastructure &amp; Construction</span>
+                  <span class="ind-card-back-rule" aria-hidden="true"></span>
+                  <div class="ind-back-sections">
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Commercial Reality</p>
+                      <p class="ind-card-back-body">Major projects involve complex ecosystems: government stakeholders, developers, investors, contractors and consultants, across extended procurement cycles and multi-layered commercial environments.</p>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Typical Clients</p>
+                      <div class="ind-back-clients">
+                        <span class="ind-back-client-tag">Project developers</span>
+                        <span class="ind-back-client-tag">Government stakeholders</span>
+                        <span class="ind-back-client-tag">Contractors</span>
+                        <span class="ind-back-client-tag">Consultants</span>
+                        <span class="ind-back-client-tag">Investors</span>
+                      </div>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">How We Create Value</p>
+                      <p class="ind-card-back-body">Influencing decisions early, developing strategic partnerships and maintaining long-term executive engagement throughout the project lifecycle.</p>
+                    </div>
+                  </div>
+                  <span class="ind-card-close" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 5H2M5 2L2 5l3 3"/>
+                    </svg>
+                    Back
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Card 5: Smart Buildings (centered right in row 2) -->
+          <div
+            class="ind-card fade-in"
+            role="button"
+            tabindex="0"
+            aria-label="Sector 05: Smart Buildings and Sustainable Development. Click to explore."
+          >
+            <div class="ind-card-inner">
+
+              <div class="ind-card-front">
+                <div class="ind-card-bg" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=70&auto=format&fit=crop');background-position:center 30%;"></div>
+                <div class="ind-card-front-content">
+                  <span class="ind-card-rule" aria-hidden="true"></span>
+                  <span class="ind-card-num">Sector 05</span>
+                  <h3 class="ind-card-title">Smart Buildings &amp;<br>Sustainable Development</h3>
+                  <span class="ind-card-hint" aria-hidden="true">
+                    <svg class="ind-card-hint-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 6h8M6 2l4 4-4 4"/>
+                    </svg>
+                    Explore
+                  </span>
+                </div>
+              </div>
+
+              <div class="ind-card-back">
+                <span class="ind-card-back-num" aria-hidden="true">05</span>
+                <div class="ind-card-back-content">
+                  <span class="ind-card-back-label">Smart Buildings &amp; Sustainable Development</span>
+                  <span class="ind-card-back-rule" aria-hidden="true"></span>
+                  <div class="ind-back-sections">
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Commercial Reality</p>
+                      <p class="ind-card-back-body">The built environment is evolving through automation, energy efficiency, sustainability and digital technologies, creating demand for innovative solutions from organisations with clear commercial strategy.</p>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">Typical Clients</p>
+                      <div class="ind-back-clients">
+                        <span class="ind-back-client-tag">Building automation specialists</span>
+                        <span class="ind-back-client-tag">Sustainable technology providers</span>
+                        <span class="ind-back-client-tag">Smart building solution providers</span>
+                      </div>
+                    </div>
+                    <div class="ind-back-section">
+                      <p class="ind-back-section-label">How We Create Value</p>
+                      <p class="ind-card-back-body">Connecting innovative technologies with the decision-makers shaping tomorrow's projects, accelerating market access and building lasting commercial relationships.</p>
+                    </div>
+                  </div>
+                  <span class="ind-card-close" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <path d="M8 5H2M5 2L2 5l3 3"/>
+                    </svg>
+                    Back
+                  </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ EXECUTIVE ADVISORY ACROSS INDUSTRIES ═══════════════ -->
+    <section class="ind-advisory" aria-labelledby="ind-advisory-heading">
+      <div class="container">
+
+        <span class="eyebrow fade-in">Executive Advisory Across Industries</span>
+
+        <blockquote class="ind-advisory-quote fade-in">
+          While infrastructure represents a core area of expertise, Sygnific's executive advisory model is designed to support organisations across a broad range of industries where international expansion, commercial transformation, and executive leadership are critical to growth.
+        </blockquote>
+
+        <p class="fade-in" style="font-size:var(--text-base);line-height:var(--leading-relaxed);color:rgba(247,245,241,0.65);max-width:700px;">Our approach adapts to each client's market while maintaining the same commitment to strategic thinking and disciplined execution.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ══ HOW WE CREATE VALUE ═════════════════════════════════ -->
+    <section class="ind-value" aria-labelledby="ind-value-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">How We Create Value</span>
+          <h2 id="ind-value-heading">Across every industry, the same<br>commitment to measurable growth.</h2>
+        </div>
+
+        <p class="fade-in" style="font-size:var(--text-base);line-height:var(--leading-relaxed);color:var(--color-text-light);max-width:680px;margin-bottom:var(--space-4);">Across every industry, our work is guided by the same objective: helping organisations grow stronger, faster, and more sustainably. We achieve this by:</p>
+
+        <div class="ind-value-grid fade-in-group">
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">01</span>
+            <span class="ind-value-text">Developing market expansion strategies.</span>
+          </div>
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">02</span>
+            <span class="ind-value-text">Strengthening commercial performance.</span>
+          </div>
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">03</span>
+            <span class="ind-value-text">Building strategic partnerships.</span>
+          </div>
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">04</span>
+            <span class="ind-value-text">Supporting executive leadership.</span>
+          </div>
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">05</span>
+            <span class="ind-value-text">Improving market positioning.</span>
+          </div>
+
+          <div class="ind-value-item">
+            <span class="ind-value-num">06</span>
+            <span class="ind-value-text">Accelerating business development.</span>
+          </div>
+
+          <div class="ind-value-item" style="border-bottom:none;">
+            <span class="ind-value-num">07</span>
+            <span class="ind-value-text">Turning strategy into measurable execution.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ CREDIBILITY STRIP ════════════════════════════════════ -->
+    <section class="ind-credibility" aria-labelledby="ind-cred-heading">
+      <div class="container">
+        <span class="ind-cred-eyebrow fade-in">Why Organisations Choose Sygnific</span>
+        <div class="ind-cred-grid fade-in-group">
+
+          <div class="ind-cred-item">
+            <p class="ind-cred-headline">Executive<br>Leadership</p>
+            <p class="ind-cred-desc">Decades of senior executive experience across international markets, directly involved in every engagement, without layers of junior consultants.</p>
+          </div>
+
+          <div class="ind-cred-item">
+            <p class="ind-cred-headline">Three<br>Regions</p>
+            <p class="ind-cred-desc">Active across APAC, the Middle East and EMEA, with on-the-ground executive relationships and commercial networks in each region.</p>
+          </div>
+
+          <div class="ind-cred-item">
+            <p class="ind-cred-headline">Sector<br>Depth</p>
+            <p class="ind-cred-desc">Deep expertise across digital infrastructure, data centres, building technologies, engineering, manufacturing and the built environment.</p>
+          </div>
+
+          <div class="ind-cred-item">
+            <p class="ind-cred-headline">Commercial<br>Execution</p>
+            <p class="ind-cred-desc">Strategy without execution creates no growth. Every engagement is designed around measurable commercial outcomes, not recommendations alone.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══ GEOGRAPHIC REACH ════════════════════════════════════ -->
+    <section class="ind-geo" aria-labelledby="ind-geo-heading">
+      <div class="container">
+
+        <div class="section-header fade-in">
+          <span class="eyebrow">Geographic Reach</span>
+          <h2 id="ind-geo-heading" style="color:var(--color-ivory);">Supporting growth ambitions across<br>APAC, the Middle East and EMEA.</h2>
+        </div>
+
+        <div class="gold-rule fade-in"></div>
+
+        <p class="fade-in" style="font-size:var(--text-base);line-height:var(--leading-relaxed);color:rgba(247,245,241,0.6);max-width:600px;margin-bottom:var(--space-4);">Sygnific supports organisations with growth ambitions across:</p>
+
+        <div class="ind-geo-grid fade-in-group">
+
+          <div class="ind-geo-region">
+            <span class="ind-geo-label">Region 01</span>
+            <p class="ind-geo-name">Asia-Pacific<br>APAC</p>
+            <span class="ind-geo-rule" aria-hidden="true"></span>
+            <p class="ind-geo-tagline">Singapore: Gateway to Asia-Pacific</p>
+            <p class="ind-geo-markets">Singapore, Malaysia, Indonesia, Thailand, Vietnam, Philippines, South Korea, Australia, and New Zealand.</p>
+          </div>
+
+          <div class="ind-geo-region">
+            <span class="ind-geo-label">Region 02</span>
+            <p class="ind-geo-name">Middle East</p>
+            <span class="ind-geo-rule" aria-hidden="true"></span>
+            <p class="ind-geo-tagline">Gulf: Executive access across the Middle East</p>
+            <p class="ind-geo-markets">United Arab Emirates, Saudi Arabia, Qatar, Oman, and neighbouring Gulf markets.</p>
+          </div>
+
+          <div class="ind-geo-region">
+            <span class="ind-geo-label">Region 03</span>
+            <p class="ind-geo-name">Europe, Middle East<br>&amp; Africa (EMEA)</p>
+            <span class="ind-geo-rule" aria-hidden="true"></span>
+            <p class="ind-geo-tagline">EMEA: Cross-border commercial perspective</p>
+            <p class="ind-geo-markets">Supporting selected growth initiatives through executive advisory, strategic partnerships, and international business development.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ LOOKING BEYOND TODAY ════════════════════════════════ -->
+    <section class="ind-beyond" aria-labelledby="ind-beyond-heading">
+      <div class="container">
+
+        <div class="section-header section-header--centered fade-in">
+          <span class="eyebrow">Looking Beyond Today</span>
+          <h2 id="ind-beyond-heading" style="max-width:1100px;margin-inline:auto;"><span style="display:block;">The industries we serve</span><span style="display:block;">are being transformed.</span></h2>
+        </div>
+
+        <blockquote class="ind-beyond-quote fade-in">
+          The industries we serve are being transformed by artificial intelligence, digital infrastructure, sustainability, demographic change, and global investment. Organisations that combine <strong>technical excellence</strong> with strategic execution will be best positioned to lead the next generation of growth. Sygnific exists to help make that happen.
+        </blockquote>
+
+        <p class="ind-beyond-body fade-in">Every engagement is tailored to the commercial realities of the industry while maintaining the same commitment to clarity, leadership and execution.</p>
+
+      </div>
+    </section>
+
+
+    <!-- ══ CTA ════════════════════════════════════════════════ -->
+    <section class="ind-cta fade-in" aria-label="Explore Opportunities Within Your Industry">
+      <div class="container">
+        <h2 class="ind-cta-heading">Explore Opportunities<br>Within Your Industry</h2>
+        <p class="ind-cta-sub">Whether you operate in digital infrastructure, engineering, manufacturing, or the built environment, we welcome the opportunity to discuss how Sygnific can support your commercial ambitions.</p>
+        <div class="ind-cta-btns">
+          <a href="https://koalendar.com/u/enrico-ferri" data-koalendar-widget class="btn btn--primary btn--lg">Explore Opportunities Within Your Industry</a>
+          <a href="contact.html#contact-form" class="btn btn--secondary btn--lg">Discuss Your Growth Objectives</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="logo-pair" style="margin-bottom:var(--space-5);">
+            <a href="/" aria-label="Sygnific FZ-LLC — UAE">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-ae.png" alt="Sygnific FZ-LLC — UAE" class="logo-img logo-img--invert">
+              </div>
+            </a>
+            <span class="logo-pair-sep logo-pair-sep--invert"></span>
+            <a href="/" aria-label="Sygnific Pte Ltd — Singapore">
+              <div class="logo-img-wrap">
+                <img src="assets/images/logo-sg.png" alt="Sygnific Pte Ltd — Singapore" class="logo-img logo-img--invert">
+              </div>
+            </a>
+          </div>
+          <p class="footer-tagline">Executive Growth &amp; Market Expansion Partner</p>
+          <p class="footer-desc">Helping organisations expand internationally through executive leadership, strategic partnerships and commercial execution.</p>
+          <span class="footer-subtag">Driving Growth Across APAC, EMEA &amp; Beyond</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <nav aria-label="Footer company links">
+            <ul class="footer-links">
+              <li><a href="about.html">About</a></li>
+              <li><a href="solutions.html">Solutions</a></li>
+              <li><a href="industries.html">Industries</a></li>
+              <li><a href="leadership.html">Leadership</a></li>
+              <li><a href="insights.html">Insights</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <nav aria-label="Footer legal links">
+            <ul class="footer-links">
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="terms.html">Terms of Use</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <address class="footer-address" style="font-style:normal;">
+            Sygnific FZ-LLC<br>
+            MBAM0485, Compass Building<br>
+            Al Shohada Road<br>
+            Al Hamra Industrial Zone-FZ<br>
+            Ras Al Khaimah, United Arab Emirates
+          </address>
+          <a href="mailto:info@sygnific.global" class="footer-email">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M2 7l10 7 10-7"/>
+            </svg>
+            info@sygnific.global
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copyright">
+          &copy; <span class="footer-year"></span> Sygnific FZ-LLC. All rights reserved.
+        </span>
+        <nav class="footer-legal-inline" aria-label="Footer legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </nav>
+        <span class="footer-credit">Designed by <a href="https://www.mayordigital.com/en" target="_blank" rel="noopener noreferrer">Mayordigital</a> &mdash; Strategic Partner</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-to-top" aria-label="Back to top">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="2,9 7,4 12,9"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js" defer></script>
+
+  <!-- ── FLIP CARD INTERACTION ──────────────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      function initFlipCards() {
+        var cards = document.querySelectorAll('.ind-card');
+
+        cards.forEach(function (card) {
+          // Click to flip
+          card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+            card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
+          });
+
+          // Keyboard: Enter / Space to flip
+          card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              card.classList.toggle('is-flipped');
+              card.setAttribute('aria-pressed', card.classList.contains('is-flipped') ? 'true' : 'false');
+            }
+            // Escape closes the flipped card
+            if (e.key === 'Escape' && card.classList.contains('is-flipped')) {
+              card.classList.remove('is-flipped');
+              card.setAttribute('aria-pressed', 'false');
+            }
+          });
+        });
+
+        // Clicking outside an open card closes it
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.ind-card')) {
+            cards.forEach(function (card) {
+              if (card.classList.contains('is-flipped')) {
+                card.classList.remove('is-flipped');
+                card.setAttribute('aria-pressed', 'false');
+              }
+            });
+          }
+        });
+      }
+
+      // Run after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFlipCards);
+      } else {
+        initFlipCards();
+      }
+    })();
+  </script>
+
+  <script>
+    window.Koalendar = window.Koalendar || function () { (Koalendar.props = Koalendar.props || []).push(arguments); };
+  </script>
+  <script async src="https://koalendar.com/assets/widget.js"></script>
+  <script>Koalendar('init');</script>
+</body>
+</html>
